@@ -11,7 +11,7 @@ pacman::p_load(dplyr,       # Manipulacion de datos
 options(scipen = 999)
 rm(list = ls())
 
-cep95 <- readRDS("input/cep95.rds")
+cep95 <- readRDS("input/original/cep95.rds")
 
 datos_cep95 <- select(cep95, 
               voto_kast = elec_pres_urna_33, #
@@ -142,4 +142,4 @@ datos_cep95_proc <- datos_cep95_proc %>%
                                                   "Media", 
                                                   "Alta")))
 
-saveRDS(datos_cep95_proc, file = "output/datos_cep95_proc.rds")
+saveRDS(datos_cep95_proc, file = "input/proc/datos_cep95_proc.rds")

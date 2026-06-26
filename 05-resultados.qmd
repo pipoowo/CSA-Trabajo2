@@ -1,4 +1,10 @@
 ﻿---
 title: "Resultados"
 ---
+
+
+```{r}
+
+```
+
 Interpreta resultados, limitaciones y aportes.
