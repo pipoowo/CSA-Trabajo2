@@ -18,8 +18,8 @@ datos_cep95 <- select(cep95,
               preferencia_democracia = democracia_21,
               preferencia_acuerdos = pp_congreso_61_b,
               preferencia_esfuerzo = pobreza_62,
-              polarización_derecha = polarizacion_1_a, #
-              polarización_izquierda = polarizacion_1_b, #
+              polarizacion_derecha = polarizacion_1_a, #
+              polarizacion_izquierda = polarizacion_1_b, #
               cambio_estado = democracia_12,
               corrupcion_serpublico = ciudadania_16) #
 
@@ -30,6 +30,7 @@ datos_cep95 <- datos_cep95 %>%
     voto_kast == 2 ~ 1,
     voto_kast > 2 ~ NA
   ))
+
 ##--- 3.2 Preferencia autoritarismo ----
 
 datos_cep95 <- datos_cep95 %>% 
@@ -61,14 +62,20 @@ datos_cep95 <- datos_cep95 %>%
   ))
 
 ##--- 3.5 Intolerancia política ----
-datos_cep95 <- mutate(datos_cep95,
-                polarizacion_pol = abs(polarización_derecha - polarización_izquierda))
+datos_cep95 <- datos_cep95 %>% 
+  mutate(polarizacion_derecha = case_when(
+    polarizacion_derecha %in% c(-8, -9) ~ NA,
+    TRUE ~ polarizacion_derecha
+  ))
 
 datos_cep95 <- datos_cep95 %>% 
-  mutate(polarizacion_pol = case_when(
-    polarizacion_pol %in% c(-8, -9) ~ NA,
-    TRUE ~ polarizacion_pol
+  mutate(polarizacion_izquierda = case_when(
+    polarizacion_izquierda %in% c(-8, -9) ~ NA,
+    TRUE ~ polarizacion_izquierda
   ))
+
+datos_cep95 <- mutate(datos_cep95,
+                polarizacion_pol = abs(polarizacion_derecha - polarizacion_izquierda))
 
 ##--- 3.6 Reticencia al cambio ----
 datos_cep95 <- datos_cep95 %>% 
@@ -80,8 +87,9 @@ datos_cep95 <- datos_cep95 %>%
 datos_cep95 <- mutate(datos_cep95,
                 cambio_estado = 3 - cambio_estado)
 
-#Base limpia
+#Eliminación de casos perdidos
 datos_cep95_proc <- na.omit(datos_cep95)
+
 
 #--- 6. Etiquetar variables ----
 datos_cep95_proc$voto_kast <- set_labels(datos_cep95_proc$voto_kast,labels = c("Si" = 1,
@@ -95,19 +103,23 @@ datos_cep95_proc <- datos_cep95_proc %>%
     preferencia_autoritarismo == 2  ~ "Media",
     preferencia_autoritarismo == 3  ~ "Alta"))
 
+
 datos_cep95_proc <- datos_cep95_proc %>% 
   mutate(corrupcion_serpublico = case_when(
-    corrupcion_serpublico == 0  ~ "Nadie", 
-    corrupcion_serpublico == 1  ~ "Poco",
+    corrupcion_serpublico %in% c(0, 1) ~ "Poco o nadie", 
     corrupcion_serpublico == 2  ~ "Moderado",
     corrupcion_serpublico == 3  ~ "Mucha gente",
-    corrupcion_serpublico == 4  ~ "Casi todo"))
+    corrupcion_serpublico == 4  ~ "Casi todos"))
+
+
+datos_cep95_proc$polarizacion_pol <- set_labels(datos_cep95_proc$polarizacion_pol,labels = c("Mínima" = 0,
+                                           "Máxima" = 10
+                                           ))
 
 datos_cep95_proc <- datos_cep95_proc %>% 
   mutate(cambio_estado = case_when(
-    cambio_estado == 0  ~ "Reformas importantes", 
-    cambio_estado == 1  ~ "Reformas menores",
-    cambio_estado == 2  ~ "Ninguna reforma"))
+    cambio_estado == 0  ~ "No", 
+    cambio_estado %in% c(1, 2)  ~ "Si"))
 
 datos_cep95_proc <- select(datos_cep95_proc, 
                 voto_kast,
@@ -117,3 +129,17 @@ datos_cep95_proc <- select(datos_cep95_proc,
                 polarizacion_pol, 
                 cambio_estado)
 
+datos_cep95_proc <- datos_cep95_proc %>%
+  mutate(
+    corrupcion_serpublico = factor(corrupcion_serpublico, 
+                                   levels = c("Poco o nadie", 
+                                              "Moderado", 
+                                              "Mucha gente", 
+                                              "Casi todos")),
+    preferencia_autoritarismo = factor(preferencia_autoritarismo, 
+                                       levels = c("Nula", 
+                                                  "Baja", 
+                                                  "Media", 
+                                                  "Alta")))
+
+saveRDS(datos_cep95_proc, file = "output/datos_cep95_proc.rds")
