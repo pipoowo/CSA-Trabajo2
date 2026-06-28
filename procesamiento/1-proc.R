@@ -23,6 +23,8 @@ datos_cep95 <- select(cep95,
               cambio_estado = democracia_12,
               corrupcion_serpublico = ciudadania_16) #
 
+tabla <- table(datos_cep95$preferencia_democracia, datos_cep95$preferencia_acuerdos)
+
 ##--- 3.1 Voto Kast ----
 datos_cep95 <- datos_cep95 %>%
   mutate(voto_kast = case_when(
@@ -35,12 +37,15 @@ datos_cep95 <- datos_cep95 %>%
 
 datos_cep95 <- datos_cep95 %>% 
   mutate(preferencia_autoritarismo = case_when(
-    preferencia_democracia == 1 & preferencia_acuerdos == 1 ~ 0, #nula ~ 0, #nula
-    preferencia_democracia == 1 & preferencia_acuerdos == 2 ~ 1, #baja
-    preferencia_democracia == 2 & preferencia_acuerdos == 2 ~ 2, #media = 
+    preferencia_democracia == 1 & preferencia_acuerdos == 1 ~ 0, 
+    preferencia_democracia == 1 & preferencia_acuerdos == 2 ~ 1,
+    preferencia_democracia == 3 & preferencia_acuerdos == 1 ~ 2, 
     preferencia_democracia == 3 & preferencia_acuerdos == 2 ~ 3, 
+    preferencia_democracia == 2 & preferencia_acuerdos == 1 ~ 4,  
+    preferencia_democracia == 2 & preferencia_acuerdos == 2 ~ 5, 
     TRUE ~ NA
   ))
+
 
 ##--- 3.3 Meritocracia ----
 
@@ -100,8 +105,10 @@ datos_cep95_proc <- datos_cep95_proc %>%
   mutate(preferencia_autoritarismo = case_when(
     preferencia_autoritarismo == 0  ~ "Nula", 
     preferencia_autoritarismo == 1  ~ "Baja",
-    preferencia_autoritarismo == 2  ~ "Media",
-    preferencia_autoritarismo == 3  ~ "Alta"))
+    preferencia_autoritarismo == 2  ~ "Media-baja",
+    preferencia_autoritarismo == 3  ~ "Media",
+    preferencia_autoritarismo == 4  ~ "Media-alta",
+    preferencia_autoritarismo == 5  ~ "Alta"))
 
 
 datos_cep95_proc <- datos_cep95_proc %>% 
@@ -138,8 +145,10 @@ datos_cep95_proc <- datos_cep95_proc %>%
                                               "Casi todos")),
     preferencia_autoritarismo = factor(preferencia_autoritarismo, 
                                        levels = c("Nula", 
-                                                  "Baja", 
-                                                  "Media", 
+                                                  "Baja",
+                                                  "Media-baja", 
+                                                  "Media",
+                                                  "Media-alta", 
                                                   "Alta")))
 
 saveRDS(datos_cep95_proc, file = "input/proc/datos_cep95_proc.rds")
