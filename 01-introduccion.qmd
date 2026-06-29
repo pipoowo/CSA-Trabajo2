@@ -2,29 +2,26 @@
 title: "Introducción"
 numbered: true
 ---
-Motivación, preguntas de investigación, Objetivo general y específicos, contribución esperada, estructura del documento.
+En las últimas décadas, el escenario político global ha experimentado el resurgimiento y consolidación de movimientos y liderazgos de ultraderecha. A diferencia de la derecha convencional, estos actores han desarrollado discursos que combinan conservadurismo moral, defensa de los valores tradicionales y punitivismo orientado a políticas mano dura en seguridad pública, adaptando sus propuestas a los distintos contextos nacionales. Este fenómeno ha adquirido gran relevancia en sociedades democráticas representadas por líderes como Narendra Modi en India, Donald Trump en Estados Unidos, José Antonio Kast en Chile, entre otros. 
 
+En el caso chileno, la postulación de José Antonio Kast a la presidencia en el año 2021 y su posterior ascenso y consolidación en el año 2026 ha convertido a la ultraderecha en un actor relevante dentro del sistema político del país. En medio de un clima marcado por la crisis de seguridad pública y el desgaste institucional tras los fallidos procesos constitucionales, la elección presidencial de 2025 configuró un escenario de alta polarización, donde la candidatura de Kast operó como el principal vehículo electoral frente a la candidatura de izquierda representada por Jeannette Jara del Partido Comunista. Este escenario ha despertado un creciente interés por comprender qué factores se asocian al respaldo de la ciudadanía a este tipo de candidaturas. Comprender estas dinámicas permite no solo explicar el comportamiento electoral reciente sino también contribuir al estudio y análisis de las transformaciones que ha experimentado el sistema político chileno, y los desafíos para la democracia en el país. 
 
-En las últimas décadas, el escenario político global ha experimentado el resurgimiento y consolidación de movimientos y liderazgos de ultraderecha. A diferencia de la derecha convencional, estos actores han desarrollado discursos que combinan conservadurismo moral, defensa de los valores tradicionales y punitivismo orientado a políticas mano dura en seguridad pública, adaptando sus propuestas a los distintos contextos nacionales. Este fenómeno ha adquirido gran relevancia en sociedades democráticas representadas por líderes como Narendra Modi en India, Donald Trump en Estados Unidos y José Antonio Kast en Chile, entre otros. 
-
-En el caso chileno, la postulación de José Antonio Kast a la presidencia en el año 2021 y su posterior ascenso y consolidación en el año 2026 ha convertido a la ultraderecha en un actor relevante dentro del sistema político del país. En medio de un clima marcado por la crisis de seguridad pública y el desgaste institucional tras los fallidos procesos constitucionales, la elección presidencial de 2025 configuró un escenario de alta polarización, donde la candidatura de Kast operó como el principal vehículo electoral frente a la candidatura de izquierda representada por Jeannette Jara. Este escenario ha despertado un creciente interés por comprender qué factores se asocian al respaldo de la ciudadanía a este tipo de candidaturas. Comprender estas dinámicas permite no solo explicar el comportamiento electoral reciente sino también contribuir al estudio y análisis de las transformaciones que ha experimentado el sistema político chileno, y los desafíos para la democracia en el país. 
-
-En particular, esta investigación examina si actitudes como la preferencia por el autoritarismo, la reticencia al cambio, la valoración de la meritocracia, la desconfianza en los servicios públicos y la polarización política se asocian con la probabilidad de votar por José Antonio Kast. Bajo ese contexto, la presente investigación plantea como pregunta: *¿Cuáles son los principales factores que se asocian con la probabilidad de votar por Kast en las elecciones presidenciales de Chile de 2025?*
+En particular, esta investigación examina si actitudes como la preferencia por el autoritarismo, la reticencia al cambio, la valoración de la meritocracia, la desconfianza en los servicios públicos y la polarización política se asocian con la probabilidad de votar por José Antonio Kast. En este sentido, la presente investigación plantea como pregunta: *¿Cuáles son los principales factores que se asocian con la probabilidad de votar por Kast en las elecciones presidenciales de Chile de 2025?*
 
 **Objetivo general:** Identificar los principales factores asociados a la probabilidad de votar por José Antonio Kast en las elecciones presidenciales de Chile de 2025.
 
 **Objetivos específicos:**
 
-1. Analizar la asociación entre la reticencia al cambio y la probabilidad de votar por José Antonio Kast.
+1. Analizar la asociación entre la preferencia por el autoritarismo y la probabilidad de votar por José Antonio Kast.
 
-2. Evaluar la asociación entre la valoración de la meritocracia y la probabilidad de votar por José Antonio Kast.
+2. Evaluar la asociación entre la creencia en la meritocracia y la probabilidad de votar por José Antonio Kast.
 
 3. Evaluar la relación entre la desconfianza en los servicios públicos y la probabilidad de votar por José Antonio Kast.
 
-4. Analizar la asociación entre la preferencia por el autoritarismo y la probabilidad de votar por José Antonio Kast.
+4. Evaluar la asociación entre la polarización política y la probabilidad de votar por José Antonio Kast.
 
-5. Evaluar la asociación entre la polarización política y la probabilidad de votar por José Antonio Kast.
+5. Analizar la asociación entre la reticencia al cambio y la probabilidad de votar por José Antonio Kast.
 
 Este trabajo busca aportar evidencia empírica sobre el comportamiento electoral en Chile mediante la identificación de las actitudes políticas e ideológicas asociadas al votante de José Antonio Kast. Además, pretende contribuir a la literatura sobre ultraderecha en Chile y comportamiento electoral mediante el análisis de los datos de la Encuesta CEP N°95 de septiembre-octubre de 2025 y un Modelo de Regresión Logística Binaria (RLB) para evaluar el efecto de distintos factores sobre la probabilidad de votar por Kast.
 
-El documento se organiza en cinco apartados. En primer lugar, se desarrollan los [antecedentes teóricos y empíricos](02-antecedentes.qmd) que respaldan la investigación. En segundo lugar, se presentan las [hipótesis](03-hipotesis.qmd). En el tercer apartado se presenta la [metodología, los datos y el protocolo de investigación](04-metodos.qmd). Posteriormente en la cuarta sección se presentan los [resultados](05-resultados.qmd). Finalmente, se presentan las [conclusiones](06-conclusiones.qmd) de la investigación.
+El documento se organiza en cinco apartados. En primer lugar, se desarrollan los [antecedentes teóricos y empíricos](02-antecedentes.qmd) que respaldan la investigación. En segundo lugar, se presentan las [hipótesis](03-hipotesis.qmd). En el tercer apartado se presenta la [metodología, los datos y el protocolo de investigación](04-metodos.qmd). Posteriormente en la cuarta sección se presentan los [resultados, limitaciones y aportes de la invetsigación](05-resultados.qmd). Finalmente, se presentan las [conclusiones](06-conclusiones.qmd) de la investigación y proyecciones futuras.
