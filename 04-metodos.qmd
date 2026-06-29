@@ -4,29 +4,29 @@ title: "Métodos"
 
 Datos y protocolo de investigación
 
-Este estudio es de carácter cuantitativo y de corte transversal. Se basa en el análisis de datos secundarios utilizando los datos de la Encuesta CEP N°95 (Septiembre-Octubre 2025) del Centro de Estudios Públicos de Chile. Esta base de datos es pública y de libre acceso disponible en línea [https://www.cepchile.cl/encuesta/encuesta-cep-n-95-septiembre-octubre-2025/].
+Este estudio es de carácter cuantitativo y de corte transversal. Se basa en el análisis de datos secundarios utilizando los datos de la Encuesta CEP N°95 (Septiembre-Octubre 2025) del [Centro de Estudios Públicos de Chile](https://www.cepchile.cl/encuesta/encuesta-cep-n-95-septiembre-octubre-2025/). Esta base de datos es pública y de libre acceso disponible en línea.
 
-La encuesta emplea un diseño muestral probabilístico y estratificado (por región y zona urbana/rural) representativo de la población adulta en Chile, con una selección aleatoria de tres etapas (manzana, hogar y entrevistado). Su población objetivo abarca a personas de 18 años y más residentes en el territorio nacional (excluyendo áreas de difícil acceso). La muestra inicial es de 1.217 casos de personas encuestadas en sus hogares en 100 comunas del país.
+La encuesta emplea un diseño muestral probabilístico y estratificado (por región y zona urbana/rural) representativo de la población adulta en Chile, con una selección aleatoria de tres etapas (manzana, hogar y entrevistado). Su población objetivo abarca a personas de 18 años y más residentes en el territorio nacional (excluyendo áreas de difícil acceso) y su muestra inicial es de 1.217 casos de personas encuestadas en sus hogares en 100 comunas del país.
 
 Para el análisis se seleccionaron y procesaron ocho variables originales del cuestionario:
 
 **Variable dependiente:**
 
-1. Preferencia electoral por José Antonio Kast, variable de carácter nominal que se operacionalizará como dicotómica. Se usa la pregunta VU_4 del cuestionario (elec_pres_urna_33 en la base de datos): Suponga ahora que Jeannette Jara y José Antonio Kast han pasado a la segunda vuelta de la elección presidencial. En ese caso, ¿por quién votaría usted? [1. Jeannette Jara. 2. José Antonio Kast. 3. Nulo. 4. Blanco. 5. No vota].
+1. **Preferencia electoral por José Antonio Kast**, variable de carácter nominal que se operacionalizará como dicotómica. Se usa la pregunta VU_4 del cuestionario (elec_pres_urna_33 en la base de datos): Suponga ahora que Jeannette Jara y José Antonio Kast han pasado a la segunda vuelta de la elección presidencial. En ese caso, ¿por quién votaría usted? [1. Jeannette Jara. 2. José Antonio Kast. 3. Nulo. 4. Blanco. 5. No vota].
 
 **Variables independientes:** 
 
-1. Preferencia por la democracia, variable nominal que corresponde a la pregunta MD_1 del cuestionario (democracia_21 en la base de datos): ¿Con cuál de las siguientes frases está UD. más de acuerdo? [1. La democracia siempre es preferible a otra forma de gobierno. 2. En algunas circunstancias, un régimen autoritario puede ser preferible. 3. A la gente como uno, le da lo mismo un régimen democrático que uno autoritario]. 
+1. **Preferencia por la democracia**, variable nominal que corresponde a la pregunta MD_1 del cuestionario (democracia_21 en la base de datos): ¿Con cuál de las siguientes frases está UD. más de acuerdo? [1. La democracia siempre es preferible a otra forma de gobierno. 2. En algunas circunstancias, un régimen autoritario puede ser preferible. 3. A la gente como uno, le da lo mismo un régimen democrático que uno autoritario]. 
 
-1. Preferencia por los acuerdos, variable nominal que corresponde a la pregunta MD_4 del cuestionario (pp_congreso_61_b en la base de datos): En el momento actual, ¿usted prefiere líderes políticos que privilegien los acuerdos, aunque tengan que ceder sus posiciones o que defiendan sus posiciones, aunque eso implique no llegar a acuerdos? [1. Privilegien los acuerdos, aunque tengan que ceder sus posiciones. 2. Defiendan sus posiciones, aunque eso implique no llegar a acuerdos. 88. No sabe. 99. No contesta]. 
+1. **Preferencia por los acuerdos**, variable nominal que corresponde a la pregunta MD_4 del cuestionario (pp_congreso_61_b en la base de datos): En el momento actual, ¿usted prefiere líderes políticos que privilegien los acuerdos, aunque tengan que ceder sus posiciones o que defiendan sus posiciones, aunque eso implique no llegar a acuerdos? [1. Privilegien los acuerdos, aunque tengan que ceder sus posiciones. 2. Defiendan sus posiciones, aunque eso implique no llegar a acuerdos. 88. No sabe. 99. No contesta]. 
 
-1. Preferencia por la meritocracia, variable intervalar que corresponde a la pregunta MP_3 (pobreza_62 en la base de datos): ¿Dónde se ubicaría usted en esta escala, en que 1 significa “los ingresos deberían hacerse más iguales, aunque no se premie el esfuerzo individual” y 10 significa “debería premiarse el esfuerzo individual, aunque se produzcan importantes diferencias de ingresos”?
+1. **Preferencia por la meritocracia**, variable intervalar que corresponde a la pregunta MP_3 (pobreza_62 en la base de datos): ¿Dónde se ubicaría usted en esta escala, en que 1 significa “los ingresos deberían hacerse más iguales, aunque no se premie el esfuerzo individual” y 10 significa “debería premiarse el esfuerzo individual, aunque se produzcan importantes diferencias de ingresos”?
 
-1. Desconfianza en los servicios públicos, variable ordinal que corresponde a la pregunta MRE_5 (ciudadania_16 en la base de datos): ¿Qué tan extendida piensa usted que está la corrupción en el servicio público en Chile? [1. Casi nadie está involucrado. 2. Un pequeño número de personas están involucradas. 3. Un número moderado de personas están involucradas. 4. Mucha gente está involucrada. 5. Casi todas las personas están involucradas. 8. No sabe. 9. No contesta]. 
+1. **Desconfianza en los servicios públicos**, variable ordinal que corresponde a la pregunta MRE_5 (ciudadania_16 en la base de datos): ¿Qué tan extendida piensa usted que está la corrupción en el servicio público en Chile? [1. Casi nadie está involucrado. 2. Un pequeño número de personas están involucradas. 3. Un número moderado de personas están involucradas. 4. Mucha gente está involucrada. 5. Casi todas las personas están involucradas. 8. No sabe. 9. No contesta]. 
 
-1. Intolerancia política, variable intervalar que corresponde a la pregunta MD_5 (polarizacion_1_a y polarizacion_1_b en la base de datos): En una escala del 0 al 10, donde 0 es que tiene una opinión muy negativa de esas personas, 5 que no tiene una opinión ni negativa ni positiva y 10 que tiene una opinión muy positiva de esas personas, ¿qué opinión tiene de cada grupo de personas? A. Las personas de derecha. B. Las personas de izquierda. 
+1. **Intolerancia política**, variable intervalar que corresponde a la pregunta MD_5 (polarizacion_1_a y polarizacion_1_b en la base de datos): En una escala del 0 al 10, donde 0 es que tiene una opinión muy negativa de esas personas, 5 que no tiene una opinión ni negativa ni positiva y 10 que tiene una opinión muy positiva de esas personas, ¿qué opinión tiene de cada grupo de personas? A. Las personas de derecha. B. Las personas de izquierda. 
 
-1. Reticencia al cambio, variable ordinal que corresponde a la pregunta MRE_1 (democracia_12 en la base de datos). Como usted sabe, el Estado se ocupa de prestar diferentes servicios a los ciudadanos. Para llevar a cabo esta labor, ¿usted cree que el Estado debería mantenerse como está, debería ser reformado con cambios menores o debería ser reformado con cambios importantes? [1. Debería mantenerse como está. 2. Debería ser reformado con cambios menores. 3. Debería ser reformado con cambios importantes. 88. No sabe. 99. No contesta]. 
+1. **Reticencia al cambio**, variable ordinal que corresponde a la pregunta MRE_1 (democracia_12 en la base de datos). Como usted sabe, el Estado se ocupa de prestar diferentes servicios a los ciudadanos. Para llevar a cabo esta labor, ¿usted cree que el Estado debería mantenerse como está, debería ser reformado con cambios menores o debería ser reformado con cambios importantes? [1. Debería mantenerse como está. 2. Debería ser reformado con cambios menores. 3. Debería ser reformado con cambios importantes. 88. No sabe. 99. No contesta]. 
 
 ```{r}
 #| echo: true
@@ -67,6 +67,8 @@ En primer lugar, se recodificó la variable dependiente de **voto presidencial**
 ```{r}
 #| echo: true
 #| eval: false
+#| code-fold: true
+#| code-summary: "Mostrar código"
 
 ##--- 3.1 Voto Kast ----
 datos_cep95 <- datos_cep95 %>%
@@ -81,6 +83,8 @@ Por otro lado, las variables **preferencia por la democracia** y **preferencia p
 ```{r}
 #| echo: true
 #| eval: false
+#| code-fold: true
+#| code-summary: "Mostrar código"
 ##--- 3.2 Preferencia autoritarismo ----
 
 datos_cep95 <- datos_cep95 %>% 
@@ -100,6 +104,8 @@ La variable **preferencia por la meritocracia** se mantiene como está, asignán
 ```{r}
 #| echo: true
 #| eval: false
+#| code-fold: true
+#| code-summary: "Mostrar código"
 
 ##--- 3.3 Meritocracia ----
 
@@ -122,11 +128,13 @@ datos_cep95 <- datos_cep95 %>%
 
 ```
 
-Posteriormente, se construyó una variable intervalar con una escala de 1 a 10 para medir el nivel de **polarización e intolerancia política**, calculada a partir del valor absoluto de la diferencia entre la **intolerancia hacia las personas de derecha** (polarizacion_1_a) y la **intolerancia hacia las personas de izquierda** (polarizacion_1_b), ambas medidas originalmente en una escala de 1 a 10.
+Posteriormente, se construyó una variable intervalar con una escala de 1 a 10 para medir el nivel de **polarización e intolerancia política**, calculada a partir del valor absoluto de la diferencia entre la **intolerancia hacia las personas de derecha** (polarizacion_1_a) y la **intolerancia hacia las personas de izquierda** (polarizacion_1_b), ambas medidas originalmente en una escala de 1 a 10. Luego, a la variable de **reticencia al cambio** también se le restó una unidad y se invirtieron sus valores (para ir de menor a mayor reticencia). Por último, se eliminaron los valores perdidos mediante listwise y se etiquetaron las variables, guardando la base procesada.
 
 ```{r}
 #| echo: true
 #| eval: false
+#| code-fold: true
+#| code-summary: "Mostrar código"
 
 ##--- 3.5 Intolerancia política ----
 datos_cep95 <- datos_cep95 %>% 
@@ -144,13 +152,6 @@ datos_cep95 <- datos_cep95 %>%
 datos_cep95 <- mutate(datos_cep95,
                 polarizacion_pol = abs(polarizacion_derecha - polarizacion_izquierda))
 
-```
-
-A continuación, a la variable de **reticencia al cambio** también se le restó una unidad y se invirtieron sus valores (para ir de menor a mayor reticencia). 
-```{r}
-#| echo: true
-#| eval: false
-
 ##--- 3.6 Reticencia al cambio ----
 datos_cep95 <- datos_cep95 %>% 
   mutate(cambio_estado = case_when(
@@ -161,14 +162,66 @@ datos_cep95 <- datos_cep95 %>%
 datos_cep95 <- mutate(datos_cep95,
                 cambio_estado = 3 - cambio_estado)
 
-```
-
-Por último, se eliminaron los valores perdidos mediante listwise.
-
-```{r}
-#| echo: true
-#| eval: false
-
 #Eliminación de casos perdidos
 datos_cep95_proc <- na.omit(datos_cep95)
+
+#--- 6. Etiquetar variables ----
+datos_cep95_proc$voto_kast <- set_labels(datos_cep95_proc$voto_kast,labels = c("Si" = 1,
+                                           "No" = 0
+                                           ))
+
+datos_cep95_proc <- datos_cep95_proc %>% 
+  mutate(preferencia_autoritarismo = case_when(
+    preferencia_autoritarismo == 0  ~ "Nula", 
+    preferencia_autoritarismo == 1  ~ "Baja",
+    preferencia_autoritarismo == 2  ~ "Media-baja",
+    preferencia_autoritarismo == 3  ~ "Media",
+    preferencia_autoritarismo == 4  ~ "Media-alta",
+    preferencia_autoritarismo == 5  ~ "Alta"))
+
+
+datos_cep95_proc <- datos_cep95_proc %>% 
+  mutate(corrupcion_serpublico = case_when(
+    corrupcion_serpublico %in% c(0, 1) ~ "Poco o nadie", 
+    corrupcion_serpublico == 2  ~ "Moderado",
+    corrupcion_serpublico == 3  ~ "Mucha gente",
+    corrupcion_serpublico == 4  ~ "Casi todos"))
+
+
+datos_cep95_proc$polarizacion_pol <- set_labels(datos_cep95_proc$polarizacion_pol,labels = c("Mínima" = 0,
+                                           "Máxima" = 10
+                                           ))
+
+datos_cep95_proc <- datos_cep95_proc %>% 
+  mutate(cambio_estado = case_when(
+    cambio_estado == 0  ~ "No", 
+    cambio_estado %in% c(1, 2)  ~ "Si"))
+
+datos_cep95_proc <- select(datos_cep95_proc, 
+                voto_kast,
+                preferencia_autoritarismo,
+                preferencia_esfuerzo, 
+                corrupcion_serpublico, 
+                polarizacion_pol, 
+                cambio_estado)
+
+datos_cep95_proc <- datos_cep95_proc %>%
+  mutate(
+    corrupcion_serpublico = factor(corrupcion_serpublico, 
+                                   levels = c("Poco o nadie", 
+                                              "Moderado", 
+                                              "Mucha gente", 
+                                              "Casi todos")),
+    preferencia_autoritarismo = factor(preferencia_autoritarismo, 
+                                       levels = c("Nula", 
+                                                  "Baja",
+                                                  "Media-baja", 
+                                                  "Media",
+                                                  "Media-alta", 
+                                                  "Alta")))
+
+saveRDS(datos_cep95_proc, file = "input/proc/datos_cep95_proc.rds")
+
 ```
+
+
