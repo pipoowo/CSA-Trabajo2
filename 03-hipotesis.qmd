@@ -1,5 +1,8 @@
 ﻿---
 title: "Hipótesis"
 ---
-
-Hipótesis de investigación. Deben ser pre-registradas.
+- **H1:** Mayores niveles de preferencia del autoritarismo por sobre la democracia aumentan la probabilidad de votar por Kast. 
+- **H2:** Mayores niveles de creencia en la meritocracia aumentan la probabilidad de votar por Kast
+- **H3:** Mayores niveles de desconfianza en los servicios públicos aumentan la probabilidad de votar por Kast
+- **H4:** Mayores niveles de intolerancia política aumentan la probabilidad de votar por Kast
+- **H5:** Mayores niveles de reticencia al cambio aumentan la probabilidad de votar por Kast

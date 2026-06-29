@@ -8,21 +8,21 @@ project:
     - assets/favicon-2025-20251031.svg  # Asegura que el favicon versionado llegue a docs/
 
 book:
-  title: Título del trabajo
-  subtitle: Trabajo final
+  title: Factores determinantes en el apoyo electoral a la ultraderecha en Chile: un análisis del perfil del votante de José Antonio Kast en las elecciones de 2025
+  subtitle: Trabajo final Ciencia Social Abierta
   output-file: reportes-facso-plantilla
-  repo-url: https://github.com/KAravena/reportesfacsobook_template  #URL del repositorio del libro (cambia segun tu repo)
+  repo-url: https://github.com/pipoowo/CSA-Trabajo2  #URL del repositorio del libro (cambia segun tu repo)
   author:
-    - name: Nombre Apellido
-      affiliation: Departamento de Sociologia, Universidad de Chile
+    - name: Elisa Calderón
+      affiliation: Departamento de Sociología, Universidad de Chile
       orcid: 0000-0000-0000-0000
-    - name: Nombre Apellido
-      affiliation: Departamento de Sociologia, Universidad de Chile
+    - name: Valentina Montecinos
+      affiliation: Departamento de Sociología, Universidad de Chile
       orcid: 0000-0000-0000-0000
-    - name: Nombre Apellido
-      affiliation: Departamento de Sociologia, Universidad de Chile
+    - name: Amalia Tsukame
+      affiliation: Departamento de Sociología, Universidad de Chile
       orcid: 0000-0000-0000-0000
-  date: today              # Usa fecha fija (YYYY-MM-DD) si necesitas control editorial
+  date: 2026-06-30              # Usa fecha fija (YYYY-MM-DD) si necesitas control editorial
   date-format: D [de] MMMM [de] YYYY
   doi: ""
   sidebar:
