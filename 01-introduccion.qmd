@@ -14,10 +14,15 @@ En particular, esta investigación examina si actitudes como la preferencia por 
 **Objetivo general:** Identificar los principales factores asociados a la probabilidad de votar por José Antonio Kast en las elecciones presidenciales de Chile de 2025.
 
 **Objetivos específicos:**
+
 1. Analizar la asociación entre la reticencia al cambio y la probabilidad de votar por José Antonio Kast.
+
 2. Evaluar la asociación entre la valoración de la meritocracia y la probabilidad de votar por José Antonio Kast.
+
 3. Evaluar la relación entre la desconfianza en los servicios públicos y la probabilidad de votar por José Antonio Kast.
+
 4. Analizar la asociación entre la preferencia por el autoritarismo y la probabilidad de votar por José Antonio Kast.
+
 5. Evaluar la asociación entre la polarización política y la probabilidad de votar por José Antonio Kast.
 
 Este trabajo busca aportar evidencia empírica sobre el comportamiento electoral en Chile mediante la identificación de las actitudes políticas e ideológicas asociadas al votante de José Antonio Kast. Además, pretende contribuir a la literatura sobre ultraderecha en Chile y comportamiento electoral mediante el análisis de los datos de la Encuesta CEP N°95 de septiembre-octubre de 2025 y un Modelo de Regresión Logística Binaria (RLB) para evaluar el efecto de distintos factores sobre la probabilidad de votar por Kast.
