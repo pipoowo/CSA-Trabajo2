@@ -22,6 +22,9 @@ book:
     - name: Amalia Tsukame
       affiliation: Departamento de Sociología, Universidad de Chile
       orcid: 0000-0000-0000-0000
+    - name: Felipe Vega
+      affiliation: Departamento de Sociología, Universidad de Chile
+      orcid: 0000-0000-0000-0000
   date: 2026-06-30              # Usa fecha fija (YYYY-MM-DD) si necesitas control editorial
   date-format: D [de] MMMM [de] YYYY
   doi: ""
