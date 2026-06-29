@@ -1,8 +1,5 @@
 ﻿---
 title: ""
-abstract: |
-  whsjajdkja.
-keywords: [Ciencia Social Abierta, comportamiento electoral, ultraderecha, autoritarismo, confianza institucional, intolerancia política, meritocracia, reticencia al cambio]
 number-sections: false
 numbered: false
 format:
@@ -23,3 +20,15 @@ format:
 nav#TOC { display: none !important; }
 div[data-when-format="pdf"] { display: none !important; }
 </style>
+# Abstract {.unnumbered}
+
+<font size="4">aquí va el abstract</font>
+
+<br>
+
+::: {.keywords-box}
+<span style="font-size: 1.1em;"><strong>Palabras clave:</strong> Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo,
+Confianza institucional, Intolerancia política, Meritocracia, Reticencia al cambio.</span>
+:::
+
+---
