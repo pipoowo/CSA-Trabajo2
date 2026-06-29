@@ -12,16 +12,14 @@ En particular, esta investigación examina si actitudes como la preferencia por 
 
 **Objetivos específicos:**
 
-1. Analizar la asociación entre la preferencia por el autoritarismo y la probabilidad de votar por José Antonio Kast.
+1. Evaluar la incidencia de las creencias vinculadas al mantenimiento del status quo (creencia en la meritocracia y reticencia al cambio del Estado) sobre la probabilidad de votar por José Antonio Kast.
 
-2. Evaluar la asociación entre la creencia en la meritocracia y la probabilidad de votar por José Antonio Kast.
+2. Determinar el impacto de la desconfianza en los servicios públicos en la probabilidad de votar por José Antonio Kast.
 
-3. Evaluar la relación entre la desconfianza en los servicios públicos y la probabilidad de votar por José Antonio Kast.
+3. Analizar el efecto de actitudes políticas radicales (preferencia por el autoritarismo y polarización política) en la probabilidad de votar por José Antonio Kast.
 
-4. Evaluar la asociación entre la polarización política y la probabilidad de votar por José Antonio Kast.
-
-5. Analizar la asociación entre la reticencia al cambio y la probabilidad de votar por José Antonio Kast.
-
+4. Comparar la capacidad explicativa de las variables valóricas, institucionales y actitudinales del electorado con respecto a su preferencia electoral.
+ 
 Este trabajo busca aportar evidencia empírica sobre el comportamiento electoral en Chile mediante la identificación de las actitudes políticas e ideológicas asociadas al votante de José Antonio Kast. Además, pretende contribuir a la literatura sobre ultraderecha en Chile y comportamiento electoral mediante el análisis de los datos de la Encuesta CEP N°95 de septiembre-octubre de 2025 y un Modelo de Regresión Logística Binaria (RLB) para evaluar el efecto de distintos factores sobre la probabilidad de votar por Kast.
 
 El documento se organiza en cinco apartados. En primer lugar, se desarrollan los [antecedentes teóricos y empíricos](02-antecedentes.qmd) que respaldan la investigación. En segundo lugar, se presentan las [hipótesis](03-hipotesis.qmd). En el tercer apartado se presenta la [metodología, los datos y el protocolo de investigación](04-metodos.qmd). Posteriormente en la cuarta sección se presentan los [resultados, limitaciones y aportes de la investigación](05-resultados.qmd). Finalmente, se presentan las [conclusiones](06-conclusiones.qmd) de la investigación y proyecciones futuras.
