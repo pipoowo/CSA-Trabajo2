@@ -31,6 +31,8 @@ Para el análisis se seleccionaron y procesaron ocho variables originales del cu
 ```{r}
 #| echo: true
 #| eval: false
+#| code-fold: true
+#| code-summary: "Mostrar código"
 pacman::p_load(dplyr,       # Manipulacion de datos 
                haven,       # importar datos en .dta o .sav
                car,         # recodificar variables
