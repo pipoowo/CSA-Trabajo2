@@ -4,9 +4,9 @@ title: "Métodos"
 
 Este estudio es de carácter cuantitativo y de corte transversal. Se basa en el análisis de datos secundarios utilizando los datos de la **Encuesta CEP N°95 (Septiembre-Octubre 2025)** del [Centro de Estudios Públicos de Chile](https://www.cepchile.cl/encuesta/encuesta-cep-n-95-septiembre-octubre-2025/). Esta base de datos es pública y de libre acceso disponible en línea.
 
-La encuesta emplea un diseño muestral probabilístico y estratificado (por región y zona urbana/rural) representativo de la población adulta en Chile, con una selección aleatoria de tres etapas (manzana, hogar y entrevistado). Su población objetivo abarca a personas de 18 años y más residentes en el territorio nacional (excluyendo áreas de difícil acceso) y su muestra inicial es de 1.217 casos de personas encuestadas en sus hogares en 100 comunas del país.
+La encuesta emplea un diseño muestral probabilístico y estratificado (por región y zona urbana/rural) representativo de la población adulta en Chile, con una selección aleatoria de tres etapas (manzana, hogar y entrevistado). Su población objetivo abarca a personas de 18 años y más residentes en el territorio nacional (excluyendo áreas de difícil acceso) y su muestra inicial es de 1.217 casos de personas encuestadas en sus hogares en 100 comunas del país. Para el análisis se seleccionaron y procesaron ocho variables originales del cuestionario.
 
-Para el análisis se seleccionaron y procesaron ocho variables originales del cuestionario:
+## Variables 
 
 **Variable dependiente:**
 
@@ -232,7 +232,9 @@ saveRDS(datos_cep95_proc, file = "input/proc/datos_cep95_proc.rds")
 
 ```
 
-Para contrastar las cinco hipótesis de investigación y responder a la pregunta de estudio, se aplicó un modelo de Regresión Logística Binaria (RLB), el cual resulta adecuado dado que la variable dependiente es dicotómica y busca evaluar el cambio en la probabilidad de ocurrencia de un evento (votar por Kast) en función de un conjunto de variables predictoras continuas y categóricas. De esta forma, el análisis jerárquico por modelos permite aislar el efecto de dimensiones específicas controlando por las demás variables, evaluando el aumento en el ajuste global del modelo en cada paso y la significancia estadística (p < 0.05, p < 0.01, p < 0.001) de las variables independientes en la explicación del fenómeno.
+## Estrategia de análisis
+
+Para contrastar las cinco hipótesis de investigación y responder a la pregunta de estudio, se aplicó un modelo de Regresión Logística Binaria (RLB), el cual resulta adecuado dado que la variable dependiente es dicotómica y busca evaluar el cambio en la probabilidad de ocurrencia de un evento (votar por Kast) en función de un conjunto de variables predictoras continuas y categóricas. De esta forma, el análisis jerárquico por modelos permite aislar el efecto de dimensiones específicas controlando por las demás variables, evaluando el aumento en el ajuste global del modelo en cada paso y la significancia estadística ($p < 0.05$, $p < 0.01$, $p < 0.001$) de las variables independientes en la explicación del fenómeno.
 
 Por lo anterior, se generaron 3 modelos: 
 
