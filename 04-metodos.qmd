@@ -4,7 +4,7 @@ title: "Métodos"
 
 Datos y protocolo de investigación
 
-Este estudio es de carácter cuantitativo y de corte transversal. Se basa en el análisis de datos secundarios utilizando los datos de la Encuesta CEP N°95 (Septiembre-Octubre 2025) del [Centro de Estudios Públicos de Chile](https://www.cepchile.cl/encuesta/encuesta-cep-n-95-septiembre-octubre-2025/). Esta base de datos es pública y de libre acceso disponible en línea.
+Este estudio es de carácter cuantitativo y de corte transversal. Se basa en el análisis de datos secundarios utilizando los datos de la **Encuesta CEP N°95 (Septiembre-Octubre 2025)** del [Centro de Estudios Públicos de Chile](https://www.cepchile.cl/encuesta/encuesta-cep-n-95-septiembre-octubre-2025/). Esta base de datos es pública y de libre acceso disponible en línea.
 
 La encuesta emplea un diseño muestral probabilístico y estratificado (por región y zona urbana/rural) representativo de la población adulta en Chile, con una selección aleatoria de tres etapas (manzana, hogar y entrevistado). Su población objetivo abarca a personas de 18 años y más residentes en el territorio nacional (excluyendo áreas de difícil acceso) y su muestra inicial es de 1.217 casos de personas encuestadas en sus hogares en 100 comunas del país.
 
@@ -12,21 +12,21 @@ Para el análisis se seleccionaron y procesaron ocho variables originales del cu
 
 **Variable dependiente:**
 
-1. **Preferencia electoral por José Antonio Kast**, variable de carácter nominal que se operacionalizará como dicotómica. Se usa la pregunta VU_4 del cuestionario (elec_pres_urna_33 en la base de datos): Suponga ahora que Jeannette Jara y José Antonio Kast han pasado a la segunda vuelta de la elección presidencial. En ese caso, ¿por quién votaría usted? [1. Jeannette Jara. 2. José Antonio Kast. 3. Nulo. 4. Blanco. 5. No vota].
+1. **Preferencia electoral por José Antonio Kast**, variable de carácter nominal que se operacionalizará como dicotómica. Se usa la pregunta VU_4 del cuestionario (*elec_pres_urna_33* en la base de datos): Suponga ahora que Jeannette Jara y José Antonio Kast han pasado a la segunda vuelta de la elección presidencial. En ese caso, ¿por quién votaría usted? [1. Jeannette Jara. 2. José Antonio Kast. 3. Nulo. 4. Blanco. 5. No vota].
 
 **Variables independientes:** 
 
-1. **Preferencia por la democracia**, variable nominal que corresponde a la pregunta MD_1 del cuestionario (democracia_21 en la base de datos): ¿Con cuál de las siguientes frases está UD. más de acuerdo? [1. La democracia siempre es preferible a otra forma de gobierno. 2. En algunas circunstancias, un régimen autoritario puede ser preferible. 3. A la gente como uno, le da lo mismo un régimen democrático que uno autoritario]. 
+1. **Preferencia por la democracia**, variable nominal que corresponde a la pregunta MD_1 del cuestionario (*democracia_21* en la base de datos): ¿Con cuál de las siguientes frases está UD. más de acuerdo? [1. La democracia siempre es preferible a otra forma de gobierno. 2. En algunas circunstancias, un régimen autoritario puede ser preferible. 3. A la gente como uno, le da lo mismo un régimen democrático que uno autoritario]. 
 
-1. **Preferencia por los acuerdos**, variable nominal que corresponde a la pregunta MD_4 del cuestionario (pp_congreso_61_b en la base de datos): En el momento actual, ¿usted prefiere líderes políticos que privilegien los acuerdos, aunque tengan que ceder sus posiciones o que defiendan sus posiciones, aunque eso implique no llegar a acuerdos? [1. Privilegien los acuerdos, aunque tengan que ceder sus posiciones. 2. Defiendan sus posiciones, aunque eso implique no llegar a acuerdos. 88. No sabe. 99. No contesta]. 
+1. **Preferencia por los acuerdos**, variable nominal que corresponde a la pregunta MD_4 del cuestionario (*pp_congreso_61_b* en la base de datos): En el momento actual, ¿usted prefiere líderes políticos que privilegien los acuerdos, aunque tengan que ceder sus posiciones o que defiendan sus posiciones, aunque eso implique no llegar a acuerdos? [1. Privilegien los acuerdos, aunque tengan que ceder sus posiciones. 2. Defiendan sus posiciones, aunque eso implique no llegar a acuerdos. 88. No sabe. 99. No contesta]. 
 
-1. **Preferencia por la meritocracia**, variable intervalar que corresponde a la pregunta MP_3 (pobreza_62 en la base de datos): ¿Dónde se ubicaría usted en esta escala, en que 1 significa “los ingresos deberían hacerse más iguales, aunque no se premie el esfuerzo individual” y 10 significa “debería premiarse el esfuerzo individual, aunque se produzcan importantes diferencias de ingresos”?
+1. **Preferencia por la meritocracia**, variable intervalar que corresponde a la pregunta MP_3 (*pobreza_62* en la base de datos): ¿Dónde se ubicaría usted en esta escala, en que 1 significa “los ingresos deberían hacerse más iguales, aunque no se premie el esfuerzo individual” y 10 significa “debería premiarse el esfuerzo individual, aunque se produzcan importantes diferencias de ingresos”?
 
-1. **Desconfianza en los servicios públicos**, variable ordinal que corresponde a la pregunta MRE_5 (ciudadania_16 en la base de datos): ¿Qué tan extendida piensa usted que está la corrupción en el servicio público en Chile? [1. Casi nadie está involucrado. 2. Un pequeño número de personas están involucradas. 3. Un número moderado de personas están involucradas. 4. Mucha gente está involucrada. 5. Casi todas las personas están involucradas. 8. No sabe. 9. No contesta]. 
+1. **Desconfianza en los servicios públicos**, variable ordinal que corresponde a la pregunta MRE_5 (*ciudadania_16* en la base de datos): ¿Qué tan extendida piensa usted que está la corrupción en el servicio público en Chile? [1. Casi nadie está involucrado. 2. Un pequeño número de personas están involucradas. 3. Un número moderado de personas están involucradas. 4. Mucha gente está involucrada. 5. Casi todas las personas están involucradas. 8. No sabe. 9. No contesta]. 
 
-1. **Intolerancia política**, variable intervalar que corresponde a la pregunta MD_5 (polarizacion_1_a y polarizacion_1_b en la base de datos): En una escala del 0 al 10, donde 0 es que tiene una opinión muy negativa de esas personas, 5 que no tiene una opinión ni negativa ni positiva y 10 que tiene una opinión muy positiva de esas personas, ¿qué opinión tiene de cada grupo de personas? A. Las personas de derecha. B. Las personas de izquierda. 
+1. **Intolerancia política**, variable intervalar que corresponde a la pregunta MD_5 (*polarizacion_1_a* y *polarizacion_1_b* en la base de datos): En una escala del 0 al 10, donde 0 es que tiene una opinión muy negativa de esas personas, 5 que no tiene una opinión ni negativa ni positiva y 10 que tiene una opinión muy positiva de esas personas, ¿qué opinión tiene de cada grupo de personas? A. Las personas de derecha. B. Las personas de izquierda. 
 
-1. **Reticencia al cambio**, variable ordinal que corresponde a la pregunta MRE_1 (democracia_12 en la base de datos). Como usted sabe, el Estado se ocupa de prestar diferentes servicios a los ciudadanos. Para llevar a cabo esta labor, ¿usted cree que el Estado debería mantenerse como está, debería ser reformado con cambios menores o debería ser reformado con cambios importantes? [1. Debería mantenerse como está. 2. Debería ser reformado con cambios menores. 3. Debería ser reformado con cambios importantes. 88. No sabe. 99. No contesta]. 
+1. **Reticencia al cambio**, variable ordinal que corresponde a la pregunta MRE_1 (*democracia_12* en la base de datos). Como usted sabe, el Estado se ocupa de prestar diferentes servicios a los ciudadanos. Para llevar a cabo esta labor, ¿usted cree que el Estado debería mantenerse como está, debería ser reformado con cambios menores o debería ser reformado con cambios importantes? [1. Debería mantenerse como está. 2. Debería ser reformado con cambios menores. 3. Debería ser reformado con cambios importantes. 88. No sabe. 99. No contesta]. 
 
 ```{r}
 #| echo: true
@@ -61,9 +61,7 @@ datos_cep95 <- select(cep95,
 tabla <- table(datos_cep95$preferencia_democracia, datos_cep95$preferencia_acuerdos)
 ```
 
-Estas variables fueron recodificadas para contrastar las hipótesis de la investigación y las categorías “No sabe” y “No responde” fueron recodificadas como valores perdidos (NA).
-
-En primer lugar, se recodificó la variable dependiente de **voto presidencial**, tratándola como dummy. En esta se le asigna el número 1 a los votantes de José Antonio Kast y 0 a los votantes de Jeannette Jara. 
+Estas variables fueron posteriormente recodificadas para contrastar las hipótesis de la investigación y las categorías “No sabe” y “No responde” se trataron como valores perdidos (NA). En primer lugar, se recodificó la variable dependiente de **voto presidencial** a una variable dummy. En esta se le asigna el número 1 a los votantes de José Antonio Kast y 0 a los votantes de Jeannette Jara. 
 ```{r}
 #| echo: true
 #| eval: false
@@ -79,7 +77,19 @@ datos_cep95 <- datos_cep95 %>%
   ))
 ```
 
-Por otro lado, las variables **preferencia por la democracia** y **preferencia por los acuerdos** se combinan formando una variable ordinal sobre **preferencia por el autoritarismo**, con 5 opciones: 0 significa una preferencia por el autoritarismo nula, cuando el encuestado manifiesta que la democracia siempre es preferible (1) y que los líderes deben privilegiar los acuerdos (1); 1 es baja, si considera que la democracia siempre es preferible (1) pero que los líderes deben defender sus posiciones sin ceder (2); 2 es media-baja, si manifiesta indiferencia ante el tipo de régimen (3) y prefiere líderes que privilegien acuerdos (1); 3 es media, si manifiesta indiferencia ante el tipo de régimen (3) y prefiere líderes que defiendan posiciones sin ceder (2); 4 es media-alta, si justifica que un gobierno autoritario puede ser preferible bajo ciertas circunstancias (2) pero opta por líderes que privilegien acuerdos (1); y 5 es alta, si justifica un gobierno autoritario bajo ciertas circunstancias (2) y además prefiere líderes que defiendan posiciones sin llegar a acuerdos (2).
+Por otro lado, las variables **preferencia por la democracia** y **preferencia por los acuerdos** se combinan formando una variable ordinal sobre **preferencia por el autoritarismo**, con 6 opciones (del 0 al 5) que van desde el menor al mayor nivel de preferencia por el autoritarismo: 
+
+- Preferencia nula, cuando el encuestado manifiesta que la democracia siempre es preferible (1) y que los líderes deben privilegiar los acuerdos (1). 
+
+- Preferencia baja, si considera que la democracia siempre es preferible (1) pero que los líderes deben defender sus posiciones sin ceder (2). 
+
+- Preferencia media-baja, si manifiesta indiferencia ante el tipo de régimen (3) y prefiere líderes que privilegien acuerdos (1). 
+
+- Preferencia media, si manifiesta indiferencia ante el tipo de régimen (3) y prefiere líderes que defiendan posiciones sin ceder (2). 
+
+- Preferencia media-alta, si justifica que un gobierno autoritario puede ser preferible bajo ciertas circunstancias (2), pero opta por líderes que privilegien acuerdos (1). 
+
+- Preferencia alta, si justifica un gobierno autoritario bajo ciertas circunstancias (2) y además prefiere líderes que defiendan posiciones sin llegar a acuerdos (2).
 ```{r}
 #| echo: true
 #| eval: false
@@ -99,7 +109,7 @@ datos_cep95 <- datos_cep95 %>%
   ))
 ```
 
-La variable **preferencia por la meritocracia** se mantiene como está, asignándole solo los valores perdidos. A su vez, se le restó una unidad a la variable de **desconfianza en los servicios públicos** en su escala original. 
+A continuación, la variable **preferencia por la meritocracia** se mantuvo, asignándole solo los valores perdidos y se le restó una unidad a la variable de **desconfianza en los servicios públicos** en su escala original. 
 
 ```{r}
 #| echo: true
@@ -128,7 +138,7 @@ datos_cep95 <- datos_cep95 %>%
 
 ```
 
-Posteriormente, se construyó una variable intervalar con una escala de 1 a 10 para medir el nivel de **polarización e intolerancia política**, calculada a partir del valor absoluto de la diferencia entre la **intolerancia hacia las personas de derecha** (polarizacion_1_a) y la **intolerancia hacia las personas de izquierda** (polarizacion_1_b), ambas medidas originalmente en una escala de 1 a 10. Luego, a la variable de **reticencia al cambio** también se le restó una unidad y se invirtieron sus valores (para ir de menor a mayor reticencia). Por último, se eliminaron los valores perdidos mediante listwise y se etiquetaron las variables, guardando la base procesada.
+Posteriormente, se construyó una variable intervalar con una escala de 1 a 10 para medir el nivel de **polarización e intolerancia política**, calculada a partir del valor absoluto de la diferencia entre la **intolerancia hacia las personas de derecha** (polarizacion_1_a) y la **intolerancia hacia las personas de izquierda** (polarizacion_1_b), ambas medidas originalmente en una escala de 1 a 10. Luego, a la variable **reticencia al cambio** también se le restó una unidad y se invirtieron sus valores (para ir de menor a mayor reticencia). Por último, se eliminaron los valores perdidos mediante listwise y se etiquetaron las variables, guardando la base procesada.
 
 ```{r}
 #| echo: true
@@ -223,5 +233,4 @@ datos_cep95_proc <- datos_cep95_proc %>%
 saveRDS(datos_cep95_proc, file = "input/proc/datos_cep95_proc.rds")
 
 ```
-
 
