@@ -8,7 +8,7 @@ project:
     - assets/favicon-2025-20251031.svg  # Asegura que el favicon versionado llegue a docs/
 
 book:
-  title: Factores determinantes en el apoyo electoral a la ultraderecha en Chile: un análisis del perfil del votante de José Antonio Kast en las elecciones de 2025
+  title: "Factores determinantes en el apoyo electoral a la ultraderecha en Chile: un análisis del perfil del votante de José Antonio Kast en las elecciones de 2025"
   subtitle: Trabajo final Ciencia Social Abierta
   output-file: reportes-facso-plantilla
   repo-url: https://github.com/pipoowo/CSA-Trabajo2  #URL del repositorio del libro (cambia segun tu repo)
