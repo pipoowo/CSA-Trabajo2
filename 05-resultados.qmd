@@ -1,10 +1,89 @@
 ﻿---
 title: "Resultados"
 ---
+A partir de la @tabla-1, en el primer modelo, las variables operan en las direcciones teóricamente esperadas y resultan ambas estadísticamente significativas con un 99.9% de confianza (p < .001). Con respecto a la creencia en meritocracia, se estima que por cada unidad que aumenta esta preferencia, los odds de votar por Kast crecen en un 22%. Es decir, a mayores niveles de creencia por el esfuerzo, aumenta la probabilidad de voto por Kast. En relación a la reticencia al cambio en el Estado, se manifiesta que las personas que se mantienen reticentes al cambio político-institucional tienen un 51% menos de chances de votar por el candidato en comparación con quienes prefieren mantener el status quo.
+
+Respecto al segundo modelo (M2), al integrar la variable de corrupción en los servicios públicos, se indica que no es estadísticamente significativo. Ninguno de los niveles de percepción de corrupción muestra diferencias estadísticamente válidas respecto a la categoría de referencia. Por otro lado, los coeficientes de las variables anteriormente presentadas en el Modelo 1 permanecen estables, es decir, la creencia en la meritocracia (OR = 1.22) y la reticencia al cambio en el Estado (OR = 0.53).
+
+Con respecto al modelo completo (M3), a medida que aumenta la preferencia por el autoritarismo, en relación con una nula preferencia, la probabilidad de votar por Kast aumenta de manera progresiva. Las categoría media-alta () y alta () tienen 176% y 245% más de odds de votar por este candidato que uno con preferencia nula; valores los cuales son estadísticamente significativos al 99.9% de confianza. La categoría media (), en cambio, presenta un aumento de 67% más de odds de votar por Kast que uno con nula preferencia al autoritarismo con un 95% de confianza. Sin embargo, las categorías baja y media-baja no alcanzan significancia estadística, por lo que no difieren de la categoría de referencia.  
+
+En relación a la variable polarización política, se aprecia un impacto positivo y estadísticamente significativo (p < .05). Cada unidad adicional que aumenta los niveles de polarización, incrementa el voto por Kast en un 6% (OR = 1.06) y, si toma el valor máximo de polarización, llega a un 60% más de chances de votar por el candidato.
+
+Al controlar por las variables relacionadas con actitudes autoritarias y de polarización, tanto la creencia en meritocracia () y la reticencia al cambio () mantienen valores estadísticamente significativos y similares a los de los anteriores modelos. Es decir, ambas variables sobreviven el control estadístico, demostrando ser factores constitutivos en el perfil del votante por ultraderecha chilena.
+
+El ajuste global del modelo revela que la inclusión progresiva de nuevas variables mejora la capacidad explicativa del modelo. El modelo 1 tiene una explicación de un 8.5% de la varianza del voto por Kast (Pseudo R = .085). Luego, al incorporar la percepción de corrupción en el sector público (Modelo 2) se produce un incremento marginal en el ajuste (Pseudo R = .093). Por último, en el modelo 3, se aprecia un salto explicativo a un 13.4% de la varianza al introducir las variables de preferencia al autoritarismo y polarización política (Pseudo R = .134).
+
+A modo de síntesis de los resultados, las hipótesis que se sostienen tras el análisis de los resultados fueron que mayores niveles de preferencia por el autoritarismo (específicamente en los niveles medio, medio-alto y alto) y la polarización política aumentan significativamente la probabilidad de votar por Kast. Asimismo, se demuestra que la preferencia por la meritocracia incrementa la probabilidad de voto por el candidato. En cambio, se rechaza la hipótesis de la percepción de corrupción en los servicios públicos ya que los resultados no fueron estadísticamente significativos. Por otro lado, la reticencia al cambio mostró una relación contraria a la esperada, es decir, si una persona es reticente al cambio en el Estado, se espera que tenga menor probabilidad de votar por el candidato.
+
+Limitaciones
+Aportes
 
 
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
+pacman::p_load(lme4,reghelper,haven,stargazer,ggplot2,dplyr, patchwork,
+               texreg,ggeffects,sjmisc,statar,summarytools,psych,sjPlot,
+               plm,lmtest,foreign, gtsummary, labelled, dplyr, gt)
 
+datos_cep95_proc <- readRDS("input/proc/datos_cep95_proc.rds")
+
+datos_cep95_proc <- datos_cep95_proc %>%
+  mutate(
+    preferencia_autoritarismo = relevel(as.factor(preferencia_autoritarismo), ref = "Nula"),
+    corrupcion_serpublico = relevel(as.factor(corrupcion_serpublico), ref = "Poco o nadie"),
+    cambio_estado = relevel(as.factor(cambio_estado), ref = "No"))
+
+var_label(datos_cep95_proc) <- list(
+  corrupcion_serpublico = "Percepción de corrupción pública",
+  cambio_estado = "Reticencia frente al cambio en el Estado",
+  preferencia_autoritarismo = "Preferencia por el autoritarismo",
+  preferencia_esfuerzo = "Creencia en la meritocracia",
+  polarizacion_pol = "Nivel de polarización política"
+)
+
+
+#M1, M2, M3
+log1 <- glm(voto_kast ~ preferencia_esfuerzo + cambio_estado,
+            data = datos_cep95_proc, family = "binomial") 
+
+log2 <- glm(voto_kast ~ preferencia_esfuerzo + cambio_estado + corrupcion_serpublico,
+            data = datos_cep95_proc, family = "binomial") 
+
+log3 <- glm(voto_kast ~ preferencia_autoritarismo + preferencia_esfuerzo + corrupcion_serpublico + polarizacion_pol + cambio_estado,
+            data = datos_cep95_proc, family = "binomial")
+
+glance_custom <- function(x) {
+  predicciones <- predict(x, type = "response")
+  valores_reales <- x$y
+  r2_tjur <- mean(predicciones[valores_reales == 1]) - mean(predicciones[valores_reales == 0])
+  tibble::tibble(nobs = stats::nobs(x), pseudo_r2 = r2_tjur)
+}
+
+#Tabla2
+
+t1 <- tbl_regression(log1, exponentiate = TRUE, intercept = TRUE) %>% 
+  add_significance_stars(hide_p = TRUE, hide_se = TRUE) %>%
+  add_glance_table(glance_fun = glance_custom, include = c("nobs", "pseudo_r2"), label = list(nobs ~ "N", pseudo_r2 ~ "Pseudo R²"))
+
+t2 <- tbl_regression(log2, exponentiate = TRUE, intercept = TRUE) %>% 
+  add_significance_stars(hide_p = TRUE, hide_se = TRUE) %>%
+  add_glance_table(glance_fun = glance_custom, include = c("nobs", "pseudo_r2"), label = list(nobs ~ "N", pseudo_r2 ~ "Pseudo R²"))
+
+t3 <- tbl_regression(log3, exponentiate = TRUE, intercept = TRUE) %>%  
+  add_significance_stars(hide_p = TRUE, hide_se = TRUE) %>%
+  add_glance_table(glance_fun = glance_custom, include = c("nobs", "pseudo_r2"), label = list(nobs ~ "N", pseudo_r2 ~ "Pseudo R²"))
+
+tabla2 <- tbl_merge(
+  tbls = list(t1, t2, t3),
+  tab_spanner = c("**M1**", "**M2**", "**M3**"),
+  quiet = TRUE
+) %>%
+  modify_header(label = "**Variables**") %>%
+  modify_table_body(~ .x %>% arrange(row_type == "glance_statistic"))
+
+tabla2
 ```
 
 Interpreta resultados, limitaciones y aportes.
