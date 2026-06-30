@@ -4,13 +4,13 @@ title: "Métodos"
 
 Este estudio es de carácter cuantitativo y de corte transversal. Se basa en el análisis de datos secundarios utilizando los datos de la **Encuesta CEP N°95 (Septiembre-Octubre 2025)** del [Centro de Estudios Públicos de Chile](https://www.cepchile.cl/encuesta/encuesta-cep-n-95-septiembre-octubre-2025/). Esta base de datos es pública y de libre acceso disponible en línea.
 
-La encuesta emplea un diseño muestral probabilístico y estratificado (por región y zona urbana/rural) representativo de la población adulta en Chile, con una selección aleatoria de tres etapas (manzana, hogar y entrevistado). Su población objetivo abarca a personas de 18 años y más residentes en el territorio nacional (excluyendo áreas de difícil acceso) y su muestra inicial es de 1.217 casos de personas encuestadas en sus hogares en 100 comunas del país. Para el análisis se seleccionaron y procesaron ocho variables originales del cuestionario.
+La encuesta emplea un diseño muestral probabilístico y estratificado (por región y zona urbana/rural) representativo de la población adulta en Chile, con una selección aleatoria de tres etapas (manzana, hogar y entrevistado). Su población objetivo abarca a personas de 18 años y más residentes en el territorio nacional (excluyendo áreas de difícil acceso) y su muestra inicial es de 1.217 casos de personas encuestadas en sus hogares en 100 comunas del país. Para el análisis en R se seleccionaron y procesaron ocho variables originales del cuestionario.
 
 ## Variables 
 
 **Variable dependiente:**
 
-1. **Preferencia electoral por José Antonio Kast**, variable de carácter nominal que se operacionalizará como dicotómica. Se usa la pregunta VU_4 del cuestionario (*elec_pres_urna_33* en la base de datos): Suponga ahora que Jeannette Jara y José Antonio Kast han pasado a la segunda vuelta de la elección presidencial. En ese caso, ¿por quién votaría usted? [1. Jeannette Jara. 2. José Antonio Kast. 3. Nulo. 4. Blanco. 5. No vota].
+1. **Preferencia electoral por José Antonio Kast**, variable de carácter nominal que corresponde a la pregunta VU_4 del cuestionario (*elec_pres_urna_33* en la base de datos): Suponga ahora que Jeannette Jara y José Antonio Kast han pasado a la segunda vuelta de la elección presidencial. En ese caso, ¿por quién votaría usted? [1. Jeannette Jara. 2. José Antonio Kast. 3. Nulo. 4. Blanco. 5. No vota].
 
 **Variables independientes:** 
 
@@ -281,15 +281,71 @@ tabla1 <- datos_tabla1 %>%
 tabla1
 ```
 
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: true
+#| code-summary: "Mostrar código"
+pacman::p_load(lme4,reghelper,haven,stargazer,ggplot2,dplyr, patchwork,
+               texreg,ggeffects,sjmisc,statar,summarytools,psych,sjPlot,
+               plm,lmtest,foreign, gtsummary, labelled, dplyr, gt)
+
+datos_cep95_proc <- readRDS("input/proc/datos_cep95_proc.rds")
+
+datos_cep95_proc <- datos_cep95_proc %>%
+  mutate(
+    preferencia_autoritarismo = relevel(as.factor(preferencia_autoritarismo), ref = "Nula"),
+    corrupcion_serpublico = relevel(as.factor(corrupcion_serpublico), ref = "Poco o nadie"),
+    cambio_estado = relevel(as.factor(cambio_estado), ref = "No"))
+
+var_label(datos_cep95_proc) <- list(
+  corrupcion_serpublico = "Percepción de corrupción pública",
+  cambio_estado = "Reticencia frente al cambio en el Estado",
+  preferencia_autoritarismo = "Preferencia por el autoritarismo",
+  preferencia_esfuerzo = "Creencia en la meritocracia",
+  polarizacion_pol = "Nivel de polarización política"
+)
+
+#Análisis descriptivos
+frq(datos_cep95_proc$voto_kast)
+frq(datos_cep95_proc$preferencia_autoritarismo)
+summary(datos_cep95_proc$preferencia_esfuerzo)
+frq(datos_cep95_proc$corrupcion_serpublico)
+summary(datos_cep95_proc$polarizacion_pol)
+frq(datos_cep95_proc$polarizacion_pol)
+```
+
 ## Estrategia de análisis
 
 Para contrastar las cinco hipótesis de investigación y responder a la pregunta de estudio, se aplicó un modelo de Regresión Logística Binaria (RLB), el cual resulta adecuado dado que la variable dependiente es dicotómica y busca evaluar el cambio en la probabilidad de ocurrencia de un evento (votar por Kast) en función de un conjunto de variables predictoras continuas y categóricas. De esta forma, el análisis jerárquico por modelos permite aislar el efecto de dimensiones específicas controlando por las demás variables, evaluando el aumento en el ajuste global del modelo en cada paso y la significancia estadística ($p < 0.05$, $p < 0.01$, $p < 0.001$) de las variables independientes en la explicación del fenómeno.
 
-Por lo anterior, se generaron 3 modelos: 
+Por las razones señaladas anteriormente, se generaron 3 modelos: 
 
-- M1: evalúa el impacto de las variables reticencia al cambio y preferencia por la meritocracia.
+- Modelo 1 (M1): evalúa el impacto de las variables reticencia al cambio y preferencia por la meritocracia.
 
-- M2:  añade al modelo anterior la desconfianza en los servicios públicos.
+- Modelo 2 (M2):  añade al modelo anterior la desconfianza en los servicios públicos.
 
-- M3: añade las variables de preferencia por el autoritarismo y de intolerancia política.
+- Modelo 3 (M3): añade las variables de preferencia por el autoritarismo y de intolerancia política.
 
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: true
+#| code-summary: "Mostrar código"
+#M1, M2, M3
+log1 <- glm(voto_kast ~ preferencia_esfuerzo + cambio_estado,
+            data = datos_cep95_proc, family = "binomial") 
+
+log2 <- glm(voto_kast ~ preferencia_esfuerzo + cambio_estado + corrupcion_serpublico,
+            data = datos_cep95_proc, family = "binomial") 
+
+log3 <- glm(voto_kast ~ preferencia_autoritarismo + preferencia_esfuerzo + corrupcion_serpublico + polarizacion_pol + cambio_estado,
+            data = datos_cep95_proc, family = "binomial")
+
+glance_custom <- function(x) {
+  predicciones <- predict(x, type = "response")
+  valores_reales <- x$y
+  r2_tjur <- mean(predicciones[valores_reales == 1]) - mean(predicciones[valores_reales == 0])
+  tibble::tibble(nobs = stats::nobs(x), pseudo_r2 = r2_tjur)
+}
+```
