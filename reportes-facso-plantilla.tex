@@ -66,8 +66,49 @@
 \fi
 \makeatother
 
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -96,13 +137,13 @@
 
 
 \ifLuaTeX
-\usepackage[bidi=basic]{babel}
+\usepackage[bidi=basic,shorthands=off]{babel}
 \else
-\usepackage[bidi=default]{babel}
+\usepackage[bidi=default,shorthands=off]{babel}
 \fi
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
 
 
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -288,6 +329,13 @@
 \renewcommand*{\appendixname}{Anexo}
 \renewcommand*{\appendixtocname}{Anexos}
 \renewcommand*{\appendixpagename}{Anexos}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{anyfontsize}
+\usepackage{multirow}
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
@@ -336,8 +384,8 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Título del trabajo},
-  pdfauthor={Nombre Apellido; Nombre Apellido; Nombre Apellido},
+  pdftitle={Factores determinantes en el apoyo electoral a la ultraderecha en Chile: un análisis del perfil del votante de José Antonio Kast en las elecciones de 2025},
+  pdfauthor={Elisa Calderón; Valentina Montecinos; Amalia Tsukame; Felipe Vega},
   pdflang={es},
   colorlinks=true,
   linkcolor={Maroon},
@@ -347,16 +395,19 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Título del trabajo}
+\title{Factores determinantes en el apoyo electoral a la ultraderecha en
+Chile: un análisis del perfil del votante de José Antonio Kast en las
+elecciones de 2025}
 \usepackage{etoolbox}
 \makeatletter
 \providecommand{\subtitle}[1]{% add subtitle to \maketitle
   \apptocmd{\@title}{\par {\large #1 \par}}{}{}
 }
 \makeatother
-\subtitle{Trabajo final}
-\author{Nombre Apellido \and Nombre Apellido \and Nombre Apellido}
-\date{22 de junio de 2026}
+\subtitle{Trabajo final Ciencia Social Abierta}
+\author{Elisa Calderón \and Valentina Montecinos \and Amalia
+Tsukame \and Felipe Vega}
+\date{30 de junio de 2026}
 \begin{document}
 \frontmatter
 \maketitle
@@ -467,62 +518,918 @@
 
 \small\textbf{Palabras clave:} Ciencia Social Abierta \normalsize
 
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \bookmarksetup{startatroot}
 
 \chapter{Introducción}\label{introducciuxf3n}
 
-Motivación, preguntas de investigación, Objetivo general y específicos,
-contribución esperada, estructura del documento.
+En las últimas décadas, el escenario político global ha experimentado el
+resurgimiento y consolidación de movimientos y liderazgos de
+ultraderecha. A diferencia de la derecha convencional, estos actores han
+desarrollado discursos que combinan conservadurismo moral, defensa de
+los valores tradicionales y punitivismo orientado a políticas mano dura
+en seguridad pública, adaptando sus propuestas a los distintos contextos
+nacionales. Este fenómeno ha adquirido gran relevancia en sociedades
+democráticas representadas por líderes como Narendra Modi en India,
+Donald Trump en Estados Unidos, José Antonio Kast en Chile, entre otros.
+
+En el caso chileno, la postulación de José Antonio Kast a la presidencia
+en el año 2021 y su posterior ascenso y consolidación en el año 2026 ha
+convertido a la ultraderecha en un actor relevante dentro del sistema
+político del país. En medio de un clima marcado por la crisis de
+seguridad pública y el desgaste institucional tras los fallidos procesos
+constitucionales, la elección presidencial de 2025 configuró un
+escenario de alta polarización, donde la candidatura de Kast operó como
+el principal vehículo electoral frente a la candidatura de izquierda
+representada por Jeannette Jara del Partido Comunista. Este escenario ha
+despertado un creciente interés por comprender qué factores se asocian
+al respaldo de la ciudadanía a este tipo de candidaturas. En este
+sentido, comprender estas dinámicas permite no solo explicar el
+comportamiento electoral reciente, sino también contribuir al estudio y
+análisis de las transformaciones que ha experimentado el sistema
+político chileno y los desafíos para la democracia en el país.
+
+En particular, esta investigación examina si actitudes como la
+preferencia por el autoritarismo, la reticencia al cambio, la valoración
+de la meritocracia, la desconfianza en los servicios públicos y la
+polarización política se asocian con la probabilidad de votar por José
+Antonio Kast. En este sentido, la presente investigación plantea como
+pregunta: \emph{¿Cuáles son los principales factores que se asocian con
+la probabilidad de votar por Kast en las elecciones presidenciales de
+Chile de 2025?}
+
+\textbf{Objetivo general:} Identificar los principales factores
+asociados a la probabilidad de votar por José Antonio Kast en las
+elecciones presidenciales de Chile de 2025.
+
+\textbf{Objetivos específicos:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Evaluar la incidencia de las creencias vinculadas al mantenimiento del
+  status quo (creencia en la meritocracia y reticencia al cambio del
+  Estado) sobre la probabilidad de votar por José Antonio Kast.
+\item
+  Determinar el impacto de la desconfianza en los servicios públicos en
+  la probabilidad de votar por José Antonio Kast.
+\item
+  Analizar el efecto de actitudes políticas radicales (preferencia por
+  el autoritarismo y polarización política) en la probabilidad de votar
+  por José Antonio Kast.
+\item
+  Comparar la capacidad explicativa de las variables valóricas,
+  institucionales y actitudinales del electorado con respecto a su
+  preferencia electoral.
+\end{enumerate}
+
+Este trabajo busca aportar evidencia empírica sobre el comportamiento
+electoral en Chile mediante la identificación de las actitudes políticas
+e ideológicas asociadas al votante de José Antonio Kast. Además,
+pretende contribuir a la literatura sobre ultraderecha en Chile y
+comportamiento electoral mediante el análisis de los datos de la
+Encuesta CEP N°95 de septiembre-octubre de 2025 a través de un Modelo de
+Regresión Logística Binaria (RLB), para evaluar el efecto de distintos
+factores sobre la probabilidad de votar por Kast.
+
+El documento se organiza en cinco apartados. En primer lugar, se
+desarrollan los \href{02-antecedentes.qmd}{antecedentes teóricos y
+empíricos} que respaldan la investigación. En segundo lugar, se
+presentan las \href{03-hipotesis.qmd}{hipótesis}. En el tercer apartado
+se presenta la \href{04-metodos.qmd}{metodología, los datos y el
+protocolo de investigación}. Posteriormente, en la cuarta sección se
+presentan los \href{05-resultados.qmd}{resultados, limitaciones y
+aportes de la investigación}. Finalmente, se presentan las
+\href{06-conclusiones.qmd}{conclusiones} de la investigación y
+proyecciones futuras.
 
 \bookmarksetup{startatroot}
 
 \chapter{Antecedentes}\label{antecedentes}
 
-Respaldo teórico y empírico de la investigación
+El crecimiento de la ultraderecha constituye uno de los fenómenos
+políticos más relevantes de las últimas décadas. El Laboratorio para el
+Estudio de la Ultraderecha (ultra-lab, s.f.) detalla que, tras la
+Segunda Guerra Mundial, los países occidentales se encontraban dominados
+por una derecha convencional caracterizada por posiciones moderadas y
+leal al sistema político democrático. Sin embargo, desde la década de
+1980 y con mayor fuerza en el siglo XXI, tomaron protagonismo actores
+situados a la derecha de la derecha convencional, caracterizados por
+adaptar sus discursos en función de los distintos contextos nacionales,
+generando un espectro ideológico complejo.
+
+A diferencia de la derecha convencional, que históricamente ha
+privilegiado los conflictos en torno a cuestiones económicas, la nueva
+ultraderecha desplaza el debate hacia dimensiones socioculturales,
+politizando temas como la identidad nacional, los valores tradicionales,
+la inmigración y la seguridad pública (Alenda y Escoffier, 2024). Según
+Rovira (2023), esta estrategia le permite movilizar no solo a sectores
+acomodados, sino también a grupos populares y de clase media que
+comparten posiciones conservadoras frente a estos temas.
+
+En América Latina, estos movimientos se caracterizan por el
+conservadurismo moral, el énfasis en políticas de mano dura frente a la
+delincuencia, la defensa del libre mercado y un discurso fuertemente
+antagonista hacia la izquierda (ultra-lab, s.f.). En este contexto,
+Zanotti y Roberts (2021) sostienen que, de 18 países sudamericanos, solo
+Kast en Chile y Bolsonaro en Brasil encarnan plenamente la ideología de
+la derecha radical populista, e identifican tres factores que explican
+su éxito: un discurso que politiza seguridad y valores tradicionales; un
+nativismo invertido respecto del caso europeo, donde la discriminación
+se dirige primero contra pueblos originarios y no contra inmigrantes; y
+la construcción de apoyo sobre una identidad negativa frente a la
+izquierda.
+
+En el caso chileno específico, la emergencia del Partido Republicano ha
+sido analizada como un proceso de reconfiguración interna del campo de
+la derecha. Campos Campos (2021) reconstruye la genealogía del Partido
+Republicano (PR), la cual nace de la candidatura presidencial
+independiente de Kast en 2017, su posterior organización en el
+movimiento ``Acción Republicana'' en 2018 y su formalización como
+partido en el 2019.
+
+Respecto al comportamiento electoral, para la candidatura de 2021,
+Argote y Visconti (2021) describieron al votante promedio de Kast como
+hombre, de derecha y mayor de cuarenta años, con altas posiciones
+favorables al uso de la fuerza en materia de seguridad pública y
+actitudes relativamente tolerantes hacia el legado del régimen militar.
+
+Más allá de las características sociodemográficas, diversos estudios han
+destacado el rol de las actitudes políticas en el apoyo a candidaturas
+de ultraderecha. En primer lugar, la preferencia por liderazgos
+autoritarios no responde necesariamente a una predisposición ideológica
+permanente, sino que puede activarse en contextos de incertidumbre,
+inseguridad o percepción de amenaza. En estas circunstancias, los
+individuos pueden valorar líderes fuertes como una respuesta
+instrumental frente a problemas considerados urgentes, más que por una
+adhesión normativa al autoritarismo (Villaroel-Riquelme, 2025).
+
+En segundo lugar, la meritocracia se ha consolidado como uno de los
+principales relatos legitimadores del orden social en Chile, promoviendo
+la idea de que el esfuerzo individual y el talento constituyen los
+principales determinantes del éxito económico y social. Esta visión
+favorece una comprensión de la desigualdad centrada en la
+responsabilidad individual y resulta consistente con proyectos políticos
+que defienden el libre mercado y un rol subsidiario del Estado (Atria,
+2021).
+
+En tercer lugar, el surgimiento de la ultraderecha ha sido interpretado
+como una ``reacción restauradora'' frente a transformaciones sociales y
+políticas derivadas del estallido social de 2019, en la cual sectores
+del electorado articulan demandas de orden, estabilidad y reticencia al
+cambio, así, el debate político chileno ha sido interpretado en torno a
+un eje ``democracia-orden'' (Titelman, 2021).
+
+Finalmente, la literatura ha señalado que el creciente malestar con el
+funcionamiento del sistema político y la desconfianza hacia las
+instituciones se enmarca en un contexto más amplio de polarización
+ideológica en Chile, caracterizado por el debilitamiento de consensos
+históricos y el aumento de la distancia entre posiciones políticas
+(Lindh et al., 2019). En este escenario, la polarización política
+constituye una dimensión relevante para comprender la estructuración de
+las preferencias electorales contemporáneas.
+
+En conjunto, estos antecedentes sugieren que el apoyo a candidaturas de
+ultraderecha puede comprenderse como el resultado de la interacción
+entre disposiciones actitudinales vinculadas al orden, la autoridad, la
+reticencia al cambio y la evaluación del sistema político, las cuales
+adquieren relevancia política contextos de polarización y desconfianza
+institucional.
 
 \bookmarksetup{startatroot}
 
 \chapter{Hipótesis}\label{hipuxf3tesis}
 
-Hipótesis de investigación. Deben ser pre-registradas.
+Las hipótesis que guiarán el presente estudio son:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{H1:} Mayores niveles de preferencia del autoritarismo por
+  sobre la democracia aumentan la probabilidad de votar por Kast.
+\item
+  \textbf{H2:} Mayores niveles de creencia en la meritocracia aumentan
+  la probabilidad de votar por Kast
+\item
+  \textbf{H3:} Mayores niveles de desconfianza en los servicios públicos
+  aumentan la probabilidad de votar por Kast
+\item
+  \textbf{H4:} Mayores niveles de intolerancia política aumentan la
+  probabilidad de votar por Kast
+\item
+  \textbf{H5:} Mayores niveles de reticencia al cambio aumentan la
+  probabilidad de votar por Kast
+\end{itemize}
 
 \bookmarksetup{startatroot}
 
 \chapter{Métodos}\label{muxe9todos}
 
-Datos y protocolo de investigación
+Este estudio es de carácter cuantitativo y de corte transversal. Se basa
+en el análisis de datos secundarios utilizando los datos de la
+\textbf{Encuesta CEP N°95 (Septiembre-Octubre 2025)} del
+\href{https://www.cepchile.cl/encuesta/encuesta-cep-n-95-septiembre-octubre-2025/}{Centro
+de Estudios Públicos de Chile}. Esta base de datos es pública y de libre
+acceso disponible en línea.
+
+La encuesta emplea un diseño muestral probabilístico y estratificado
+(por región y zona urbana/rural) representativo de la población adulta
+en Chile, con una selección aleatoria de tres etapas (manzana, hogar y
+entrevistado). Su población objetivo abarca a personas de 18 años y más
+residentes en el territorio nacional (excluyendo áreas de difícil
+acceso) y su muestra inicial es de 1.217 casos de personas encuestadas
+en sus hogares en 100 comunas del país. Para el análisis en R se
+seleccionaron y procesaron ocho variables originales del cuestionario.
+
+\section{Variables}\label{variables}
+
+\textbf{Variable dependiente:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Preferencia electoral por José Antonio Kast}, variable de
+  carácter nominal que corresponde a la pregunta VU\_4 del cuestionario
+  (\emph{elec\_pres\_urna\_33} en la base de datos): Suponga ahora que
+  Jeannette Jara y José Antonio Kast han pasado a la segunda vuelta de
+  la elección presidencial. En ese caso, ¿por quién votaría usted? {[}1.
+  Jeannette Jara. 2. José Antonio Kast. 3. Nulo. 4. Blanco. 5. No
+  vota{]}.
+\end{enumerate}
+
+\textbf{Variables independientes:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Preferencia por la democracia}, variable nominal que
+  corresponde a la pregunta MD\_1 del cuestionario
+  (\emph{democracia\_21} en la base de datos): ¿Con cuál de las
+  siguientes frases está UD. más de acuerdo? {[}1. La democracia siempre
+  es preferible a otra forma de gobierno. 2. En algunas circunstancias,
+  un régimen autoritario puede ser preferible. 3. A la gente como uno,
+  le da lo mismo un régimen democrático que uno autoritario{]}.
+\item
+  \textbf{Preferencia por los acuerdos}, variable nominal que
+  corresponde a la pregunta MD\_4 del cuestionario
+  (\emph{pp\_congreso\_61\_b} en la base de datos): En el momento
+  actual, ¿usted prefiere líderes políticos que privilegien los
+  acuerdos, aunque tengan que ceder sus posiciones o que defiendan sus
+  posiciones, aunque eso implique no llegar a acuerdos? {[}1.
+  Privilegien los acuerdos, aunque tengan que ceder sus posiciones. 2.
+  Defiendan sus posiciones, aunque eso implique no llegar a acuerdos.
+  88. No sabe. 99. No contesta{]}.
+\item
+  \textbf{Preferencia por la meritocracia}, variable intervalar que
+  corresponde a la pregunta MP\_3 (\emph{pobreza\_62} en la base de
+  datos): ¿Dónde se ubicaría usted en esta escala, en que 1 significa
+  ``los ingresos deberían hacerse más iguales, aunque no se premie el
+  esfuerzo individual'' y 10 significa ``debería premiarse el esfuerzo
+  individual, aunque se produzcan importantes diferencias de ingresos''?
+\item
+  \textbf{Desconfianza en los servicios públicos}, variable ordinal que
+  corresponde a la pregunta MRE\_5 (\emph{ciudadania\_16} en la base de
+  datos): ¿Qué tan extendida piensa usted que está la corrupción en el
+  servicio público en Chile? {[}1. Casi nadie está involucrado. 2. Un
+  pequeño número de personas están involucradas. 3. Un número moderado
+  de personas están involucradas. 4. Mucha gente está involucrada. 5.
+  Casi todas las personas están involucradas. 8. No sabe. 9. No
+  contesta{]}.
+\item
+  \textbf{Intolerancia política}, variable intervalar que corresponde a
+  la pregunta MD\_5 (\emph{polarizacion\_1\_a} y
+  \emph{polarizacion\_1\_b} en la base de datos): En una escala del 0 al
+  10, donde 0 es que tiene una opinión muy negativa de esas personas, 5
+  que no tiene una opinión ni negativa ni positiva y 10 que tiene una
+  opinión muy positiva de esas personas, ¿qué opinión tiene de cada
+  grupo de personas? A. Las personas de derecha. B. Las personas de
+  izquierda.
+\item
+  \textbf{Reticencia al cambio}, variable ordinal que corresponde a la
+  pregunta MRE\_1 (\emph{democracia\_12} en la base de datos). Como
+  usted sabe, el Estado se ocupa de prestar diferentes servicios a los
+  ciudadanos. Para llevar a cabo esta labor, ¿usted cree que el Estado
+  debería mantenerse como está, debería ser reformado con cambios
+  menores o debería ser reformado con cambios importantes? {[}1. Debería
+  mantenerse como está. 2. Debería ser reformado con cambios menores. 3.
+  Debería ser reformado con cambios importantes. 88. No sabe. 99. No
+  contesta{]}.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(dplyr,       }\CommentTok{\# Manipulacion de datos }
+\NormalTok{               haven,       }\CommentTok{\# importar datos en .dta o .sav}
+\NormalTok{               car,         }\CommentTok{\# recodificar variables}
+\NormalTok{               sjlabelled,  }\CommentTok{\# etiquetado de variables}
+\NormalTok{               sjmisc,      }\CommentTok{\# descriptivos y frecuencias}
+\NormalTok{               sjPlot,      }\CommentTok{\# tablas, plots y descriptivos}
+\NormalTok{               summarytools, }\CommentTok{\# resumen de dataframe}
+\NormalTok{               readxl        }\CommentTok{\# base de datos xlsx}
+\NormalTok{               )}
+
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{999}\NormalTok{)}
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list =} \FunctionTok{ls}\NormalTok{())}
+
+\NormalTok{cep95 }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(}\StringTok{"input/original/cep95.rds"}\NormalTok{)}
+
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}} \FunctionTok{select}\NormalTok{(cep95, }
+              \AttributeTok{voto\_kast =}\NormalTok{ elec\_pres\_urna\_33, }\CommentTok{\#}
+              \AttributeTok{preferencia\_democracia =}\NormalTok{ democracia\_21,}
+              \AttributeTok{preferencia\_acuerdos =}\NormalTok{ pp\_congreso\_61\_b,}
+              \AttributeTok{preferencia\_esfuerzo =}\NormalTok{ pobreza\_62,}
+              \AttributeTok{polarizacion\_derecha =}\NormalTok{ polarizacion\_1\_a, }\CommentTok{\#}
+              \AttributeTok{polarizacion\_izquierda =}\NormalTok{ polarizacion\_1\_b, }\CommentTok{\#}
+              \AttributeTok{cambio\_estado =}\NormalTok{ democracia\_12,}
+              \AttributeTok{corrupcion\_serpublico =}\NormalTok{ ciudadania\_16) }\CommentTok{\#}
+
+\NormalTok{tabla }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(datos\_cep95}\SpecialCharTok{$}\NormalTok{preferencia\_democracia, datos\_cep95}\SpecialCharTok{$}\NormalTok{preferencia\_acuerdos)}
+\end{Highlighting}
+\end{Shaded}
+
+Estas variables fueron posteriormente recodificadas para contrastar las
+hipótesis de la investigación y las categorías ``No sabe'' y ``No
+responde'' se trataron como valores perdidos (NA). En primer lugar, se
+recodificó la variable dependiente de \textbf{voto presidencial} a una
+variable dummy. En esta se le asigna el número 1 a los votantes de José
+Antonio Kast y 0 a los votantes de Jeannette Jara.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#{-}{-}{-} 3.1 Voto Kast {-}{-}{-}{-}}
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95 }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{voto\_kast =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    voto\_kast }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\textasciitilde{}} \DecValTok{0}\NormalTok{,}
+\NormalTok{    voto\_kast }\SpecialCharTok{==} \DecValTok{2} \SpecialCharTok{\textasciitilde{}} \DecValTok{1}\NormalTok{,}
+\NormalTok{    voto\_kast }\SpecialCharTok{\textgreater{}} \DecValTok{2} \SpecialCharTok{\textasciitilde{}} \ConstantTok{NA}
+\NormalTok{  ))}
+\end{Highlighting}
+\end{Shaded}
+
+Por otro lado, las variables \textbf{preferencia por la democracia} y
+\textbf{preferencia por los acuerdos} se combinan formando una variable
+ordinal sobre \textbf{preferencia por el autoritarismo}, con 6 opciones
+(del 0 al 5) que van desde el menor al mayor nivel de preferencia por el
+autoritarismo:
+
+\begin{itemize}
+\item
+  Preferencia nula, cuando el encuestado manifiesta que la democracia
+  siempre es preferible (1) y que los líderes deben privilegiar los
+  acuerdos (1).
+\item
+  Preferencia baja, si considera que la democracia siempre es preferible
+  (1) pero que los líderes deben defender sus posiciones sin ceder (2).
+\item
+  Preferencia media-baja, si manifiesta indiferencia ante el tipo de
+  régimen (3) y prefiere líderes que privilegien acuerdos (1).
+\item
+  Preferencia media, si manifiesta indiferencia ante el tipo de régimen
+  (3) y prefiere líderes que defiendan posiciones sin ceder (2).
+\item
+  Preferencia media-alta, si justifica que un gobierno autoritario puede
+  ser preferible bajo ciertas circunstancias (2), pero opta por líderes
+  que privilegien acuerdos (1).
+\item
+  Preferencia alta, si justifica un gobierno autoritario bajo ciertas
+  circunstancias (2) y además prefiere líderes que defiendan posiciones
+  sin llegar a acuerdos (2).
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#{-}{-}{-} 3.2 Preferencia autoritarismo {-}{-}{-}{-}}
+
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{preferencia\_autoritarismo =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    preferencia\_democracia }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ preferencia\_acuerdos }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\textasciitilde{}} \DecValTok{0}\NormalTok{, }
+\NormalTok{    preferencia\_democracia }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ preferencia\_acuerdos }\SpecialCharTok{==} \DecValTok{2} \SpecialCharTok{\textasciitilde{}} \DecValTok{1}\NormalTok{,}
+\NormalTok{    preferencia\_democracia }\SpecialCharTok{==} \DecValTok{3} \SpecialCharTok{\&}\NormalTok{ preferencia\_acuerdos }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\textasciitilde{}} \DecValTok{2}\NormalTok{, }
+\NormalTok{    preferencia\_democracia }\SpecialCharTok{==} \DecValTok{3} \SpecialCharTok{\&}\NormalTok{ preferencia\_acuerdos }\SpecialCharTok{==} \DecValTok{2} \SpecialCharTok{\textasciitilde{}} \DecValTok{3}\NormalTok{, }
+\NormalTok{    preferencia\_democracia }\SpecialCharTok{==} \DecValTok{2} \SpecialCharTok{\&}\NormalTok{ preferencia\_acuerdos }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\textasciitilde{}} \DecValTok{4}\NormalTok{,  }
+\NormalTok{    preferencia\_democracia }\SpecialCharTok{==} \DecValTok{2} \SpecialCharTok{\&}\NormalTok{ preferencia\_acuerdos }\SpecialCharTok{==} \DecValTok{2} \SpecialCharTok{\textasciitilde{}} \DecValTok{5}\NormalTok{, }
+    \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}} \ConstantTok{NA}
+\NormalTok{  ))}
+\end{Highlighting}
+\end{Shaded}
+
+A continuación, la variable \textbf{preferencia por la meritocracia} se
+mantuvo, asignándole solo los valores perdidos y se le restó una unidad
+a la variable de \textbf{desconfianza en los servicios públicos} en su
+escala original.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#{-}{-}{-} 3.3 Meritocracia {-}{-}{-}{-}}
+
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{preferencia\_esfuerzo =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    preferencia\_esfuerzo }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{8}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \ConstantTok{NA}\NormalTok{,}
+    \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}}\NormalTok{ preferencia\_esfuerzo}
+\NormalTok{  ))}
+
+\DocumentationTok{\#\#{-}{-}{-} 3.4 Desconfianza en serv. públicos {-}{-}{-}{-}}
+
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}} \FunctionTok{mutate}\NormalTok{(datos\_cep95,}
+                \AttributeTok{corrupcion\_serpublico =}\NormalTok{ corrupcion\_serpublico }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{corrupcion\_serpublico =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    corrupcion\_serpublico }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{8}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \ConstantTok{NA}\NormalTok{,}
+    \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}}\NormalTok{ corrupcion\_serpublico}
+\NormalTok{  ))}
+\end{Highlighting}
+\end{Shaded}
+
+Posteriormente, se construyó una variable intervalar con una escala de 1
+a 10 para medir el nivel de \textbf{polarización e intolerancia
+política}, calculada a partir del valor absoluto de la diferencia entre
+la \textbf{intolerancia hacia las personas de derecha}
+(polarizacion\_1\_a) y la \textbf{intolerancia hacia las personas de
+izquierda} (polarizacion\_1\_b), ambas medidas originalmente en una
+escala de 1 a 10. Luego, a la variable \textbf{reticencia al cambio}
+también se le restó una unidad y se invirtieron sus valores (para ir de
+menor a mayor reticencia). Por último, se eliminaron los valores
+perdidos mediante listwise y se etiquetaron las variables, guardando la
+base procesada.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#{-}{-}{-} 3.5 Intolerancia política {-}{-}{-}{-}}
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{polarizacion\_derecha =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    polarizacion\_derecha }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{8}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \ConstantTok{NA}\NormalTok{,}
+    \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}}\NormalTok{ polarizacion\_derecha}
+\NormalTok{  ))}
+
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{polarizacion\_izquierda =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    polarizacion\_izquierda }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{8}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \ConstantTok{NA}\NormalTok{,}
+    \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}}\NormalTok{ polarizacion\_izquierda}
+\NormalTok{  ))}
+
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}} \FunctionTok{mutate}\NormalTok{(datos\_cep95,}
+                \AttributeTok{polarizacion\_pol =} \FunctionTok{abs}\NormalTok{(polarizacion\_derecha }\SpecialCharTok{{-}}\NormalTok{ polarizacion\_izquierda))}
+
+\DocumentationTok{\#\#{-}{-}{-} 3.6 Reticencia al cambio {-}{-}{-}{-}}
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{cambio\_estado =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    cambio\_estado }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{8}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \ConstantTok{NA}\NormalTok{,}
+    \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}}\NormalTok{ cambio\_estado}
+\NormalTok{  ))}
+
+\NormalTok{datos\_cep95 }\OtherTok{\textless{}{-}} \FunctionTok{mutate}\NormalTok{(datos\_cep95,}
+                \AttributeTok{cambio\_estado =} \DecValTok{3} \SpecialCharTok{{-}}\NormalTok{ cambio\_estado)}
+
+\CommentTok{\#Eliminación de casos perdidos}
+\NormalTok{datos\_cep95\_proc }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(datos\_cep95)}
+
+\CommentTok{\#{-}{-}{-} 6. Etiquetar variables {-}{-}{-}{-}}
+\NormalTok{datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{voto\_kast }\OtherTok{\textless{}{-}} \FunctionTok{set\_labels}\NormalTok{(datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{voto\_kast,}\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Si"} \OtherTok{=} \DecValTok{1}\NormalTok{,}
+                                           \StringTok{"No"} \OtherTok{=} \DecValTok{0}
+\NormalTok{                                           ))}
+
+\NormalTok{datos\_cep95\_proc }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95\_proc }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{preferencia\_autoritarismo =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    preferencia\_autoritarismo }\SpecialCharTok{==} \DecValTok{0}  \SpecialCharTok{\textasciitilde{}} \StringTok{"Nula"}\NormalTok{, }
+\NormalTok{    preferencia\_autoritarismo }\SpecialCharTok{==} \DecValTok{1}  \SpecialCharTok{\textasciitilde{}} \StringTok{"Baja"}\NormalTok{,}
+\NormalTok{    preferencia\_autoritarismo }\SpecialCharTok{==} \DecValTok{2}  \SpecialCharTok{\textasciitilde{}} \StringTok{"Media{-}baja"}\NormalTok{,}
+\NormalTok{    preferencia\_autoritarismo }\SpecialCharTok{==} \DecValTok{3}  \SpecialCharTok{\textasciitilde{}} \StringTok{"Media"}\NormalTok{,}
+\NormalTok{    preferencia\_autoritarismo }\SpecialCharTok{==} \DecValTok{4}  \SpecialCharTok{\textasciitilde{}} \StringTok{"Media{-}alta"}\NormalTok{,}
+\NormalTok{    preferencia\_autoritarismo }\SpecialCharTok{==} \DecValTok{5}  \SpecialCharTok{\textasciitilde{}} \StringTok{"Alta"}\NormalTok{))}
+
+
+\NormalTok{datos\_cep95\_proc }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95\_proc }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{corrupcion\_serpublico =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    corrupcion\_serpublico }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \StringTok{"Poco o nadie"}\NormalTok{, }
+\NormalTok{    corrupcion\_serpublico }\SpecialCharTok{==} \DecValTok{2}  \SpecialCharTok{\textasciitilde{}} \StringTok{"Moderado"}\NormalTok{,}
+\NormalTok{    corrupcion\_serpublico }\SpecialCharTok{==} \DecValTok{3}  \SpecialCharTok{\textasciitilde{}} \StringTok{"Mucha gente"}\NormalTok{,}
+\NormalTok{    corrupcion\_serpublico }\SpecialCharTok{==} \DecValTok{4}  \SpecialCharTok{\textasciitilde{}} \StringTok{"Casi todos"}\NormalTok{))}
+
+
+\NormalTok{datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{polarizacion\_pol }\OtherTok{\textless{}{-}} \FunctionTok{set\_labels}\NormalTok{(datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{polarizacion\_pol,}\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Mínima"} \OtherTok{=} \DecValTok{0}\NormalTok{,}
+                                           \StringTok{"Máxima"} \OtherTok{=} \DecValTok{10}
+\NormalTok{                                           ))}
+
+\NormalTok{datos\_cep95\_proc }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95\_proc }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{cambio\_estado =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    cambio\_estado }\SpecialCharTok{==} \DecValTok{0}  \SpecialCharTok{\textasciitilde{}} \StringTok{"No"}\NormalTok{, }
+\NormalTok{    cambio\_estado }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{)  }\SpecialCharTok{\textasciitilde{}} \StringTok{"Si"}\NormalTok{))}
+
+\NormalTok{datos\_cep95\_proc }\OtherTok{\textless{}{-}} \FunctionTok{select}\NormalTok{(datos\_cep95\_proc, }
+\NormalTok{                voto\_kast,}
+\NormalTok{                preferencia\_autoritarismo,}
+\NormalTok{                preferencia\_esfuerzo, }
+\NormalTok{                corrupcion\_serpublico, }
+\NormalTok{                polarizacion\_pol, }
+\NormalTok{                cambio\_estado)}
+
+\NormalTok{datos\_cep95\_proc }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95\_proc }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{corrupcion\_serpublico =} \FunctionTok{factor}\NormalTok{(corrupcion\_serpublico, }
+                                   \AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Poco o nadie"}\NormalTok{, }
+                                              \StringTok{"Moderado"}\NormalTok{, }
+                                              \StringTok{"Mucha gente"}\NormalTok{, }
+                                              \StringTok{"Casi todos"}\NormalTok{)),}
+    \AttributeTok{preferencia\_autoritarismo =} \FunctionTok{factor}\NormalTok{(preferencia\_autoritarismo, }
+                                       \AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Nula"}\NormalTok{, }
+                                                  \StringTok{"Baja"}\NormalTok{,}
+                                                  \StringTok{"Media{-}baja"}\NormalTok{, }
+                                                  \StringTok{"Media"}\NormalTok{,}
+                                                  \StringTok{"Media{-}alta"}\NormalTok{, }
+                                                  \StringTok{"Alta"}\NormalTok{)))}
+
+\FunctionTok{saveRDS}\NormalTok{(datos\_cep95\_proc, }\AttributeTok{file =} \StringTok{"input/proc/datos\_cep95\_proc.rds"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+A continuación, en la Tabla~\ref{tbl-tabla-1} se presentan las variables
+utilizadas en el modelo y sus estadísticos descriptivos:
+
+{
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2484}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7516}}@{}}
+
+\caption{\label{tbl-tabla-1}Estadísticos descriptivos de las variables
+del modelo.}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Variables
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Estadísticos descriptivos (N = 774)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Voto por Kast & 1) Sí = 54.13\%\textbackslash0) No = 45.87\% \\
+Preferencia por el autoritarismo & 1) Nula = 38.63\%\textbackslash2)
+Baja = 11.50\%\textbackslash3) Media-baja = 10.08\%\textbackslash4)
+Media = 14.21\%\textbackslash5) Media-alta = 16.28\%\textbackslash6)
+Alta = 9.3\% \\
+Desconfianza en los servicios públicos & 1) Poco o nadie =
+17.18\%\textbackslash2) Moderado = 24.03\%\textbackslash3) Mucha gente =
+42.12\%\textbackslash4) Casi todos = 16.67\% \\
+Reticencia al cambio & 1) Sí = 22.22\%\textbackslash0) No = 77.78\% \\
+Intolerancia política & Promedio = 3.59\textbackslash Desviación
+estándar = 3.42\textbackslash Mín. = 0; Máx. = 10 \\
+Preferencia por la meritocracia & Promedio =
+6.75\textbackslash Desviación estándar = 2.75\textbackslash Mín. = 1;
+Máx. = 10 \\
+
+\end{longtable}
+
+}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(lme4,reghelper,haven,stargazer,ggplot2,dplyr, patchwork,}
+\NormalTok{               texreg,ggeffects,sjmisc,statar,summarytools,psych,sjPlot,}
+\NormalTok{               plm,lmtest,foreign, gtsummary, labelled, dplyr, gt)}
+
+\NormalTok{datos\_cep95\_proc }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(}\StringTok{"input/proc/datos\_cep95\_proc.rds"}\NormalTok{)}
+
+\NormalTok{datos\_cep95\_proc }\OtherTok{\textless{}{-}}\NormalTok{ datos\_cep95\_proc }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{preferencia\_autoritarismo =} \FunctionTok{relevel}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(preferencia\_autoritarismo), }\AttributeTok{ref =} \StringTok{"Nula"}\NormalTok{),}
+    \AttributeTok{corrupcion\_serpublico =} \FunctionTok{relevel}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(corrupcion\_serpublico), }\AttributeTok{ref =} \StringTok{"Poco o nadie"}\NormalTok{),}
+    \AttributeTok{cambio\_estado =} \FunctionTok{relevel}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(cambio\_estado), }\AttributeTok{ref =} \StringTok{"No"}\NormalTok{))}
+
+\FunctionTok{var\_label}\NormalTok{(datos\_cep95\_proc) }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}
+  \AttributeTok{corrupcion\_serpublico =} \StringTok{"Percepción de corrupción pública"}\NormalTok{,}
+  \AttributeTok{cambio\_estado =} \StringTok{"Reticencia frente al cambio en el Estado"}\NormalTok{,}
+  \AttributeTok{preferencia\_autoritarismo =} \StringTok{"Preferencia por el autoritarismo"}\NormalTok{,}
+  \AttributeTok{preferencia\_esfuerzo =} \StringTok{"Creencia en la meritocracia"}\NormalTok{,}
+  \AttributeTok{polarizacion\_pol =} \StringTok{"Nivel de polarización política"}
+\NormalTok{)}
+
+\CommentTok{\#Análisis descriptivos}
+\FunctionTok{frq}\NormalTok{(datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{voto\_kast)}
+\FunctionTok{frq}\NormalTok{(datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{preferencia\_autoritarismo)}
+\FunctionTok{summary}\NormalTok{(datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{preferencia\_esfuerzo)}
+\FunctionTok{frq}\NormalTok{(datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{corrupcion\_serpublico)}
+\FunctionTok{summary}\NormalTok{(datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{polarizacion\_pol)}
+\FunctionTok{frq}\NormalTok{(datos\_cep95\_proc}\SpecialCharTok{$}\NormalTok{polarizacion\_pol)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Estrategia de análisis}\label{estrategia-de-anuxe1lisis}
+
+Para contrastar las cinco hipótesis de investigación y responder a la
+pregunta de estudio, se aplicó un modelo de Regresión Logística Binaria
+(RLB), el cual resulta adecuado dado que la variable dependiente es
+dicotómica y busca evaluar el cambio en la probabilidad de ocurrencia de
+un evento (votar por Kast) en función de un conjunto de variables
+predictoras continuas y categóricas. De esta forma, el análisis
+jerárquico por modelos permite aislar el efecto de dimensiones
+específicas controlando por las demás variables, evaluando el aumento en
+el ajuste global del modelo en cada paso y la significancia estadística
+(\(p < 0.05\), \(p < 0.01\), \(p < 0.001\)) de las variables
+independientes en la explicación del fenómeno.
+
+Por las razones señaladas anteriormente, se generaron 3 modelos:
+
+\begin{itemize}
+\item
+  Modelo 1 (M1): evalúa el impacto de las variables reticencia al cambio
+  y preferencia por la meritocracia.
+\item
+  Modelo 2 (M2): añade al modelo anterior la desconfianza en los
+  servicios públicos.
+\item
+  Modelo 3 (M3): añade las variables de preferencia por el autoritarismo
+  y de intolerancia política.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#M1, M2, M3}
+\NormalTok{log1 }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(voto\_kast }\SpecialCharTok{\textasciitilde{}}\NormalTok{ preferencia\_esfuerzo }\SpecialCharTok{+}\NormalTok{ cambio\_estado,}
+            \AttributeTok{data =}\NormalTok{ datos\_cep95\_proc, }\AttributeTok{family =} \StringTok{"binomial"}\NormalTok{) }
+
+\NormalTok{log2 }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(voto\_kast }\SpecialCharTok{\textasciitilde{}}\NormalTok{ preferencia\_esfuerzo }\SpecialCharTok{+}\NormalTok{ cambio\_estado }\SpecialCharTok{+}\NormalTok{ corrupcion\_serpublico,}
+            \AttributeTok{data =}\NormalTok{ datos\_cep95\_proc, }\AttributeTok{family =} \StringTok{"binomial"}\NormalTok{) }
+
+\NormalTok{log3 }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(voto\_kast }\SpecialCharTok{\textasciitilde{}}\NormalTok{ preferencia\_autoritarismo }\SpecialCharTok{+}\NormalTok{ preferencia\_esfuerzo }\SpecialCharTok{+}\NormalTok{ corrupcion\_serpublico }\SpecialCharTok{+}\NormalTok{ polarizacion\_pol }\SpecialCharTok{+}\NormalTok{ cambio\_estado,}
+            \AttributeTok{data =}\NormalTok{ datos\_cep95\_proc, }\AttributeTok{family =} \StringTok{"binomial"}\NormalTok{)}
+
+\NormalTok{glance\_custom }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{  predicciones }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(x, }\AttributeTok{type =} \StringTok{"response"}\NormalTok{)}
+\NormalTok{  valores\_reales }\OtherTok{\textless{}{-}}\NormalTok{ x}\SpecialCharTok{$}\NormalTok{y}
+\NormalTok{  r2\_tjur }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(predicciones[valores\_reales }\SpecialCharTok{==} \DecValTok{1}\NormalTok{]) }\SpecialCharTok{{-}} \FunctionTok{mean}\NormalTok{(predicciones[valores\_reales }\SpecialCharTok{==} \DecValTok{0}\NormalTok{])}
+\NormalTok{  tibble}\SpecialCharTok{::}\FunctionTok{tibble}\NormalTok{(}\AttributeTok{nobs =}\NormalTok{ stats}\SpecialCharTok{::}\FunctionTok{nobs}\NormalTok{(x), }\AttributeTok{pseudo\_r2 =}\NormalTok{ r2\_tjur)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 \bookmarksetup{startatroot}
 
 \chapter{Resultados}\label{resultados}
 
-Interpreta resultados, limitaciones y aportes.
+A partir de la Tabla~\ref{tbl-figura-2}, en el primer modelo las
+variables operan en las direcciones teóricamente esperadas y resultan
+ambas estadísticamente significativas con un 99.9\% de confianza (\$ p
+\textless{} .001\$). Con respecto a la creencia en meritocracia, se
+estima que por cada unidad que aumenta esta preferencia, los odds de
+votar por Kast crecen en un 22\%. Es decir, a mayores niveles de
+creencia por el esfuerzo, aumenta la probabilidad de voto por Kast. En
+relación a la reticencia al cambio en el Estado, se manifiesta que las
+personas que se mantienen reticentes al cambio político-institucional
+tienen un 51\% menos de chances de votar por el candidato en comparación
+con quienes prefieren reformas en el Estado.
+
+Respecto al segundo modelo (M2), al integrar la variable de corrupción
+en los servicios públicos, se indica que no es estadísticamente
+significativo. Ninguno de los niveles de percepción de corrupción
+muestra diferencias estadísticamente válidas respecto a la categoría de
+referencia. Por otro lado, los coeficientes de las variables
+anteriormente presentadas en el Modelo 1 permanecen estables, es decir,
+la creencia en la meritocracia (OR = 1.22) y la reticencia al cambio en
+el Estado (OR = 0.53).
+
+Con respecto al modelo completo (M3), a medida que aumenta la
+preferencia por el autoritarismo, en relación con una nula preferencia,
+la probabilidad de votar por Kast aumenta de manera progresiva. Las
+categoría media-alta (OR = 2.76) y alta (OR = 3.45) tienen 176\% y 245\%
+más de odds de votar por este candidato que uno con preferencia nula;
+valores los cuales son estadísticamente significativos al 99.9\% de
+confianza. La categoría media (OR = 1.67), en cambio, presenta un
+aumento de 67\% más de odds de votar por Kast que uno con nula
+preferencia al autoritarismo con un 95\% de confianza. Sin embargo, las
+categorías baja y media-baja no alcanzan significancia estadística, por
+lo que no difieren de la categoría de referencia.
+
+En relación a la variable polarización política, se aprecia un impacto
+positivo y estadísticamente significativo (\(p < .05\)). Cada unidad
+adicional que aumenta los niveles de polarización, incrementa el voto
+por Kast en un 6\% (OR = 1.06) y, si toma el valor máximo de
+polarización, llega a un 60\% más de chances de votar por el candidato.
+
+Al controlar por las variables relacionadas con actitudes autoritarias y
+de polarización, tanto la creencia en meritocracia (OR = 1.20;
+\(p < .001\)) y la reticencia al cambio (OR = 0.58; \(p < .01\))
+mantienen valores estadísticamente significativos y similares a los de
+los anteriores modelos. Es decir, ambas variables sobreviven el control
+estadístico, demostrando ser factores constitutivos en el perfil del
+votante por ultraderecha chilena.
+
+El ajuste global del modelo revela que la inclusión progresiva de nuevas
+variables mejora la capacidad explicativa del modelo. El modelo 1 tiene
+una explicación de un 8.5\% de la varianza del voto por Kast (Pseudo R²
+= .085). Luego, al incorporar la percepción de corrupción en el sector
+público (Modelo 2) se produce un incremento marginal en el ajuste
+(Pseudo R² = .093). Por último, en el modelo 3, se aprecia un salto
+explicativo a un 13.4\% de la varianza al introducir las variables de
+preferencia al autoritarismo y polarización política (Pseudo R² = .134).
+
+A modo de síntesis de los resultados, las hipótesis que se sostienen
+tras el análisis de los resultados fueron que mayores niveles de
+preferencia por el autoritarismo (específicamente en los niveles medio,
+medio-alto y alto) y la polarización política aumentan
+significativamente la probabilidad de votar por Kast. Asimismo, se
+demuestra que la preferencia por la meritocracia incrementa la
+probabilidad de voto por el candidato. En cambio, se rechaza la
+hipótesis de la percepción de corrupción en los servicios públicos, ya
+que los resultados no fueron estadísticamente significativos. Por otro
+lado, la reticencia al cambio mostró una relación contraria a la
+esperada, es decir, si una persona es reticente al cambio en el Estado,
+se espera que tenga menor probabilidad de votar por el candidato.
+
+Algunas limitaciones de la investigación son, en primer lugar, que a
+pesar de que se obtuvo una capacidad explicativa del 13.4\% en el M3, se
+deja un 86.6\% de la varianza fuera del modelo la cual responde a
+factores no incluidos. Por otro lado, existen limitaciones metodológicas
+en la forma en la que se construyeron algunas variables debido a que
+estas no logran del todo capturar la complejidad real del constructo,
+tendiendo a simplificar o limitar; por ejemplo, en la variable de
+preferencia por el autoritarismo, la cual es posible medir con más de
+dos variables de manera multidimensional. Ahora bien, esto se transforma
+en desafíos para futuras investigaciones, las cuales deberían incorporar
+las variables ausentes o complejizar la operacionalización de las
+variables.
+
+Por último, a nivel de la base de datos ocupada, el trabajo de campo de
+la encuesta CEP utilizada se realizó meses previos a la segunda vuelta
+electoral donde salió electo José Antonio Kast. En consecuencia, se
+presenta en este estudio un problema de desfase temporal ya que refleja
+los efectos vigentes en un periodo previo a las elecciones en sí, lo que
+podría conllevar una subestimación de las verdaderas actitudes que
+tuvieron los votantes al decidir definitivamente su voto en las urnas.
+
+Finalmente, uno de los aportes fundamentales de esta investigación es la
+evidencia que brinda con respecto a la conceptualización de la nueva
+ultraderecha. A partir de las variables analizadas se aprecian, por un
+lado, conceptos relacionados más a una derecha tradicional, como por
+ejemplo la creencia en la meritocracia. Sin embargo, también se
+incluyeron variables de una visión más radical como el autoritarismo y
+la polarización política, las cuales han tomado un rol crucial en la
+conceptualización de estos nuevos movimientos. En este sentido, en el
+estudio se ve una incidencia importante e independiente al sobrevivir el
+control estadístico de las variables relacionadas a la derecha más
+radical. Además, se rechazó la hipótesis sobre la reticencia al cambio,
+esto podría significar que en esta muestra el votante de Kast se
+moviliza más por una percepción de cambio en el Estado que se diferencia
+con discursos de derecha más tradicionales que buscan el mantenimiento
+del status quo.
+
+\begin{table}
+
+\caption{\label{tbl-figura-2}}
+
+\centering{
+
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccc}
+\toprule
+ & \textbf{M1} & \textbf{M2} & \textbf{M3} \\ 
+\cmidrule(lr){2-2} \cmidrule(lr){3-3} \cmidrule(lr){4-4}
+\textbf{Variables} & \textbf{OR}\textsuperscript{\textit{1}} & \textbf{OR}\textsuperscript{\textit{1}} & \textbf{OR}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+(Intercept) & 0.37*** & 0.37*** & 0.22*** \\ 
+Creencia en la meritocracia & 1.22*** & 1.22*** & 1.20*** \\ 
+Reticencia frente al cambio en el Estado &  &  &  \\ 
+    No & \textemdash & \textemdash & \textemdash \\ 
+    Si & 0.49*** & 0.53*** & 0.58** \\ 
+Percepci\\'on de corrupci\\'on p\\'ublica &  &  &  \\ 
+    Poco o nadie &  & \textemdash & \textemdash \\ 
+    Moderado &  & 0.82 & 0.85 \\ 
+    Mucha gente &  & 0.93 & 0.91 \\ 
+    Casi todos &  & 1.51 & 1.36 \\ 
+Preferencia por el autoritarismo &  &  &  \\ 
+    Nula &  &  & \textemdash \\ 
+    Baja &  &  & 1.45 \\ 
+    Media-baja &  &  & 1.47 \\ 
+    Media &  &  & 1.67* \\ 
+    Media-alta &  &  & 2.76*** \\ 
+    Alta &  &  & 3.45*** \\ 
+Nivel de polarizaci\\'on pol\\'itica &  &  & 1.06* \\ 
+{N} & {774} & {774} & {774} \\ 
+Pseudo R\texttwosuperior & 0.085 & 0.093 & 0.134 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}*p\textless{}0.05; **p\textless{}0.01; ***p\textless{}0.001\\
+Abbreviations: CI = Confidence Interval, OR = Odds Ratio\\
+\end{minipage}
+
+Figura 2. Probabilidad de votar por José Antonio Kast según niveles de
+preferencia por el autoritarismo y polarización política.
+
+}
+
+\end{table}%
 
 \bookmarksetup{startatroot}
 
 \chapter{Conclusiones}\label{conclusiones}
 
-Síntesis y proyecciones futuras.
+\section{Síntesis y reflexión}\label{suxedntesis-y-reflexiuxf3n}
+
+En primer lugar, los hallazgos muestran que la preferencia por el
+autoritarismo y la polarización política constituyen los factores con
+mayor capacidad predictiva dentro del modelo final, en línea con lo
+señalado por Zanotti y Roberts (2021) respecto de los rasgos distintivos
+de la derecha radical populista en América Latina. El incremento
+observado en el ajuste del modelo al incorporar estas variables (M3)
+sugiere que el apoyo electoral a Kast se encuentra asociado
+principalmente a disposiciones ideológicas y actitudinales vinculadas al
+autoritarismo y la polarización política.
+
+En segundo lugar, la asociación positiva entre la creencia en la
+meritocracia y la probabilidad de votar por Kast resulta consistente con
+la interpretación de Atria (2021), quien plantea que la meritocracia
+opera como un relato legitimador del orden social basado en la
+responsabilidad individual y el mérito. En este sentido, los resultados
+sugieren que quienes adhieren con mayor fuerza a estas creencias
+presentan también una mayor probabilidad de apoyar proyectos políticos
+que enfatizan la responsabilidad individual por sobre la intervención
+estatal.
+
+En tercer lugar, la ausencia de significancia estadística de la
+desconfianza en los servicios públicos es relevante, ya que contradice
+la hipótesis inicial. Considerando las variables incluidas, la
+percepción sobre el funcionamiento de los servicios públicos no aparece
+como un predictor significativo del voto por Kast. Este resultado
+relativiza aquellas interpretaciones que explican el apoyo a
+candidaturas de ultraderecha principalmente como una expresión de
+descontento con el aparato estatal.
+
+Por otra parte, el signo inverso observado para la reticencia al cambio
+contradice directamente la hipótesis H5 y matiza la interpretación del
+voto por Kast como una simple ``reacción restauradora'', en el sentido
+planteado por Titelman (2021). Contrario a lo esperado, quienes
+manifestaron una mayor preferencia por mantener el Estado sin
+modificaciones presentaron una menor probabilidad de votar por Kast.
+Este hallazgo sugiere que el electorado del candidato no necesariamente
+se identifica con una defensa ilimitada del status quo institucional,
+sino que podría expresar una disposición favorable a transformaciones
+específicas del Estado orientadas hacia un proyecto político distinto,
+especialmente en materias asociadas al orden y la seguridad pública.
+
+Finalmente, los resultados indican que el comportamiento electoral en
+torno a Kast no puede comprenderse a partir de una única dimensión
+explicativa, sino que responde a la interacción de distintas actitudes
+políticas e ideológicas, particularmente aquellas relacionadas con el
+autoritarismo, la meritocracia y la polarización política, en un
+contexto de fragilidad de los consensos políticos como el descrito por
+Lindh et al.(2019).
+
+Al mismo tiempo, aunque la incorporación progresiva de estas variables
+mejora el ajuste del modelo, el pseudo R² final de 0,134 evidencia que
+una parte importante del comportamiento electoral permanece sin
+explicar. Esto sugiere que factores no considerados en esta
+investigación (como la identificación partidaria, la percepción de
+inseguridad, la evaluación económica) podrían contribuir a comprender de
+manera más completa las preferencias electorales observadas. Asimismo,
+para futuras investigaciones, es posible profundizar estos resultados
+mediante diseños longitudinales que permitan observar la evolución
+temporal de estas actitudes. También, sería valioso incorporar
+metodologías cualitativas que exploren el significado que le dan los
+electores a conceptos como la meritocracia o la autoridad en el Chile
+contemporáneo.
+
+\section{Alcances y límites del proyecto
+abierto}\label{alcances-y-luxedmites-del-proyecto-abierto}
+
+En cuanto a los alcances de desarrollar esta investigación bajo un
+enfoque de ciencia abierta, es posible destacar que permite una
+democratización del conocimiento generado. Esto resulta sumamente
+valioso en el contexto actual, donde el estudio del avance de la
+ultraderecha en Latinoamérica ha adquirido gran relevancia. De este
+modo, el proyecto posee un alto potencial de reproducibilidad, al usar
+una fuente de datos abierta y transparentarla, incluir el código
+utilizado y detallar explícitamente los procedimientos metodológicos
+para su eventual réplica.
+
+Sin embargo, el estudio presenta limitaciones asociadas a esta
+modalidad. En primer lugar, si bien dejar un pre-registro en la
+plataforma OSF promueve la transparencia de la investigación y reduce el
+riesgo de malas prácticas de investigación, también restringe las
+modificaciones posteriores que se le quieran hacer al estudio. Estas
+limitaciones afectaron cambios legítimos no relacionados a la
+manipulación de resultados, tales como en precisiones conceptuales o en
+formas de operacionalizar una variable para que sea lo más exhaustiva
+posible. A su vez, implicó una ruptura con las estructuras tradicionales
+de escritura académica, obligando a reconfigurar los criterios
+habituales sobre qué contenidos deben ser incluidos o excluidos en el
+reporte de investigación. Por lo mismo, adoptar esta metodología implicó
+un desafío complejo, no obstante, la experiencia realizando este
+ejercicio es un aporte indispensable para el aprendizaje y la difusión
+de prácticas de ciencia abierta.
 
 \bookmarksetup{startatroot}
 
-\chapter{Referencias}\label{referencias}
+\chapter{Referencias
+bibliográficas}\label{referencias-bibliogruxe1ficas}
 
-\phantomsection\label{refs}
-
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{part}{Apéndices}
-\appendix
-
-\chapter{Instrumentos de
-levantamiento}\label{instrumentos-de-levantamiento}
-
-Incluye cuestionarios, guias de entrevista, etc.
-
-\chapter{Tablas adicionales}\label{tablas-adicionales}
-
-Tablas extendidas, tests de robustez, etc.
+\protect\phantomsection\label{refs}
 
 
 \backmatter
