@@ -136,7 +136,7 @@ datos_cep95 <- datos_cep95 %>%
 
 ```
 
-Posteriormente, se construyó una variable intervalar con una escala de 0 a 10 para medir el nivel de **polarización e intolerancia política**, calculada a partir del valor absoluto de la diferencia entre la **intolerancia hacia las personas de derecha** (polarizacion_1_a) y la **intolerancia hacia las personas de izquierda** (polarizacion_1_b), ambas medidas originalmente en una escala de 1 a 10. Luego, a la variable **reticencia al cambio** también se le restó una unidad y se invirtieron sus valores (para ir de menor a mayor reticencia). Por último, se eliminaron los valores perdidos mediante listwise y se etiquetaron las variables, guardando la base procesada.
+Posteriormente, se construyó una variable intervalar con una escala de 1 a 10 para medir el nivel de **polarización e intolerancia política**, calculada a partir del valor absoluto de la diferencia entre la **intolerancia hacia las personas de derecha** (polarizacion_1_a) y la **intolerancia hacia las personas de izquierda** (polarizacion_1_b), ambas medidas originalmente en una escala de 1 a 10. Luego, a la variable **reticencia al cambio** también se le restó una unidad y se invirtieron sus valores (para ir de menor a mayor reticencia). Por último, se eliminaron los valores perdidos mediante listwise y se etiquetaron las variables, guardando la base procesada.
 
 ```{r}
 #| echo: true
@@ -230,6 +230,55 @@ datos_cep95_proc <- datos_cep95_proc %>%
 
 saveRDS(datos_cep95_proc, file = "input/proc/datos_cep95_proc.rds")
 
+```
+
+A continuación, en la @fig-figura-1 se presentan las variables utilizadas en el modelo y sus estadísticos descriptivos:
+
+```{r figura-1, echo=FALSE, fig.cap="Figura 1. Estadísticos descriptivos de las variables del modelo.", fig.align="center", out.width="80%"}
+#| label: fig-figura-1
+pacman::p_load(lme4,reghelper,haven,stargazer,ggplot2,dplyr, patchwork,
+               texreg,ggeffects,sjmisc,statar,summarytools,psych,sjPlot,
+               plm,lmtest,foreign, gtsummary, labelled, dplyr, tibble, gt)
+
+datos_cep95_proc <- readRDS("input/proc/datos_cep95_proc.rds")
+
+datos_tabla1 <- tibble(
+  variable = c(
+    "Voto por Kast",
+    "Preferencia por el autoritarismo",
+    "Desconfianza en los servicios públicos",
+    "Reticencia al cambio",
+    "Intolerancia política",
+    "Preferencia por la meritocracia"
+  ),
+  estadisticos = c(
+    gt::html("1) Sí = 54.13% 0) No = 45.87%"),
+    gt::html("1) Nula = 38.63% 2) Baja = 11.50% 3) Media-baja = 10.08% 4) Media = 14.21% 5) Media-alta = 16.28% 6) Alta = 9.3%"),
+    gt::html("1) Poco o nadie = 17.18% >2) Moderado = 24.03% 3) Mucha gente = 42.12% 4) Casi todos = 16.67%"),
+    gt::html("1) Sí = 22.22% 0) No = 77.78%"),
+    gt::html("Promedio = 3.59 Desviación estándar = 3.42 Mín. = 0; Máx. = 10"),
+    gt::html("Promedio = 6.75 Desviación estándar = 2.75 Mín. = 1; Máx. = 10")
+  )
+)
+
+tabla1 <- datos_tabla1 %>%
+  gt() %>%
+  cols_label(
+    variable = "Variables",
+    estadisticos = "Estadísticos descriptivos (N = 774)"
+  ) %>%
+  tab_options(
+    table.width = pct(100),
+    column_labels.font.weight = "bold",
+    table.border.top.style = "solid",
+    table.border.bottom.style = "solid"
+  ) %>%
+  tab_style(
+    style = cell_text(align = "left", v_align = "top"),
+    locations = cells_body()
+  )
+
+tabla1
 ```
 
 ## Estrategia de análisis
