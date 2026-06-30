@@ -136,7 +136,7 @@ datos_cep95 <- datos_cep95 %>%
 
 ```
 
-Posteriormente, se construyó una variable intervalar con una escala de 1 a 10 para medir el nivel de **polarización e intolerancia política**, calculada a partir del valor absoluto de la diferencia entre la **intolerancia hacia las personas de derecha** (polarizacion_1_a) y la **intolerancia hacia las personas de izquierda** (polarizacion_1_b), ambas medidas originalmente en una escala de 1 a 10. Luego, a la variable **reticencia al cambio** también se le restó una unidad y se invirtieron sus valores (para ir de menor a mayor reticencia). Por último, se eliminaron los valores perdidos mediante listwise y se etiquetaron las variables, guardando la base procesada.
+Posteriormente, se construyó una variable intervalar con una escala de 0 a 10 para medir el nivel de **polarización e intolerancia política**, calculada a partir del valor absoluto de la diferencia entre la **intolerancia hacia las personas de derecha** (polarizacion_1_a) y la **intolerancia hacia las personas de izquierda** (polarizacion_1_b), ambas medidas originalmente en una escala de 1 a 10. Luego, a la variable **reticencia al cambio** también se le restó una unidad y se invirtieron sus valores (para ir de menor a mayor reticencia). Por último, se eliminaron los valores perdidos mediante listwise y se etiquetaron las variables, guardando la base procesada.
 
 ```{r}
 #| echo: true
