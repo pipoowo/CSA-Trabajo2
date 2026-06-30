@@ -1,11 +1,26 @@
 ---
 title: "Referencias bibliográficas"
-suppress-bibliography: false
-nocite: |
-  @*
 number-sections: false
 ---
 
-::: {#refs}
-:::
+::: {.hanging-indent}
+Alenda, S., & Escoffier, S. (2024). Más allá del fascismo: Una agenda de investigación sobre la nueva ultraderecha en América Latina. *Revista de Historia Social y de las Mentalidades, 28>*(1), 255-290. <https://revistas.usach.cl/ojs/index.php/historiasocial/article/view/6539/26005046>
 
+Argote, P., & Visconti, G. (2021, 23 de noviembre). Entendiendo al votante de Kast. *Tercera Dosis*.
+
+Atria, J. (2021). Los dilemas de la meritocracia. Entrevista con François Dubet. *Revista Mexicana de Sociología, 83*(2), 475–494. <https://doi.org/10.22201/iis.01882503p.2021.2.60092>
+
+Campos Campos, C. (2021). El Partido Republicano: el proyecto populista de la derecha radical chilena. *Revista Uruguaya de Ciencia Política, 30*(1), 105–134. <https://doi.org/10.26851/rucp.30.1.5>
+
+Laboratorio para el Estudio de la Ultraderecha (ultra-lab). (s.f.). *Ideas de ultraderecha*. Recuperado el 28 de junio de 2026, de <https://ultra-lab.cl/ideas-de-ultraderecha.php>
+
+Lindh, J., Fábrega, J., & González, J. (2019). La fragilidad de los consensos. Polarización ideológica en el Chile post Pinochet. *Revista de ciencia política (Santiago), 39*(1), 99-127. <https://dx.doi.org/10.4067/S0718-090X2019000100099>
+
+Rovira Kaltwasser, C. (2023). *La ultraderecha en América Latina: definiciones y explicaciones*. Friedrich-Ebert-Stiftung. <https://collections.fes.de/publikationen/ident/fes/20670>
+
+Titelman, N. (2021, noviembre). La derecha sin complejos que busca frenar el cambio en Chile. *Nueva Sociedad*. <https://nuso.org/articulo/Chile-Kast-Boric/>
+
+Villarroel-Riquelme, F. (2025, 10 de noviembre). ¿Sólo instrumentalmente? Reflexiones sobre la preferencia por líderes autoritarios e ideología política. *MEPOP: Núcleo Milenio para el Estudio de la Política, Opinión Pública y Medios en Chile*. <https://mepop.cl/solo-instrumentalmente-reflexiones-sobre-la-preferencia-por-lideres-autoritarios-e-ideologia-politica/>
+
+Zanotti, L., & Roberts, K. M. (2021). (Aún) la excepción y no la regla: La derecha populista radical en América Latina. *Revista Uruguaya de Ciencia Política, 30*(1), 23–48. <https://doi.org/10.26851/rucp.30.1.2>
+:::
