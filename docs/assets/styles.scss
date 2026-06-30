@@ -103,8 +103,20 @@ nav.quarto-page-breadcrumbs .chapter-number {
   margin-bottom: 1rem;
 }
 
-.keywords-line strong {
+.keywords-line strong,
+.keywords-box strong {
   color: var(--ink);
+}
+
+.keywords-box {
+  display: block;
+  margin: 1rem 0 1.2rem;
+  padding: 0.7rem 0.9rem;
+  border-left: 3px solid var(--facso);
+  background: #f8fafc;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .content p,

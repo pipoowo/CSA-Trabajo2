@@ -24,14 +24,11 @@ El resurgimiento de la ultraderecha en Chile, consolidado por la figura de José
 Los resultados muestran que una mayor preferencia por el autoritarismo, una mayor creencia en la meritocracia y mayores niveles de polarización política incrementan significativamente las chances de votar por José Antonio Kast. En contraste, la percepción de corrupción en los servicios públicos no presentó un efecto estadísticamente significativo. Por último, la reticencia al cambio mostró una relación opuesta a la planteada inicialmente, evidenciando que quienes prefieren mantener el Estado sin cambios presentan menores odds de apoyar la candidatura de Kast.
 
 ::: {.content-visible when-format="pdf"}
-\vspace{1em}
-\small\textbf{Palabras clave:} Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo, Confianza institucional, Intolerancia política, Meritocracia, Reticencia al cambio.
-\normalsize
+\noindent\small\textbf{Palabras clave:} Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo, Confianza institucional, Intolerancia política, Meritocracia, Reticencia al cambio.\par
 :::
 
 ::: {.content-visible when-format="html"}
-<br>
 ::: {.keywords-box}
-<span style="font-size: 0.9em;"><strong>Palabras clave:</strong> Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo, Confianza institucional, Intolerancia política, Meritocracia, Reticencia al cambio.</span>
+<strong>Palabras clave:</strong> Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo, Confianza institucional, Intolerancia política, Meritocracia, Reticencia al cambio.
 :::
 :::

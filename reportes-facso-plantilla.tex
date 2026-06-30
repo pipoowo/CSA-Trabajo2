@@ -135,6 +135,39 @@
 \makeatother
 
 
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \ifLuaTeX
 \usepackage[bidi=basic,shorthands=off]{babel}
@@ -516,9 +549,38 @@ Tsukame \and Felipe Vega}
 
 \markboth{Abstract}{Abstract}
 
-\small\textbf{Palabras clave:} Ciencia Social Abierta \normalsize
+El resurgimiento de la ultraderecha en Chile, consolidado por la figura
+de José Antonio Kast plantea interrogantes sobre los factores asociados
+a su apoyo electoral en escenarios políticos polarizados. En este
+contexto, la presente investigación tiene como objetivo identificar los
+principales factores asociados a la probabilidad de votar por José
+Antonio Kast en las elecciones presidenciales de Chile de 2025,
+considerando variables actitudinales como la preferencia por el
+autoritarismo, la creencia en la meritocracia, la desconfianza en los
+servicios públicos, la polarización política y la reticencia al cambio.
+Para esto, se realizó un estudio cuantitativo de corte transversal
+utilizando la Encuesta CEP N.° 95 (septiembre-octubre de 2025), en la
+cual a partir de una muestra probabilística de personas de 18 años y
+más, se estimaron tres modelos jerárquicos de regresión logística
+binaria para evaluar el efecto de las variables explicativas sobre la
+probabilidad de votar por Kast.
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+Los resultados muestran que una mayor preferencia por el autoritarismo,
+una mayor creencia en la meritocracia y mayores niveles de polarización
+política incrementan significativamente las chances de votar por José
+Antonio Kast. En contraste, la percepción de corrupción en los servicios
+públicos no presentó un efecto estadísticamente significativo. Por
+último, la reticencia al cambio mostró una relación opuesta a la
+planteada inicialmente, evidenciando que quienes prefieren mantener el
+Estado sin cambios presentan menores odds de apoyar la candidatura de
+Kast.
+
+\noindent\small\textbf{Palabras clave:} Ciencia Social Abierta,
+Ultraderecha, Comportamiento Electoral, Autoritarismo, Confianza
+institucional, Intolerancia política, Meritocracia, Reticencia al
+cambio.
+
+\par
 
 \bookmarksetup{startatroot}
 
@@ -610,7 +672,9 @@ proyecciones futuras.
 
 El crecimiento de la ultraderecha constituye uno de los fenómenos
 políticos más relevantes de las últimas décadas. El Laboratorio para el
-Estudio de la Ultraderecha (ultra-lab, s.f.) detalla que, tras la
+Estudio de la Ultraderecha
+(\citeproc{ref-_laboratorio_}{\emph{Laboratorio Para El {Estudio} de La
+{Ultraderecha} En {América Latina}}, s.~f.}) detalla que, tras la
 Segunda Guerra Mundial, los países occidentales se encontraban dominados
 por una derecha convencional caracterizada por posiciones moderadas y
 leal al sistema político democrático. Sin embargo, desde la década de
@@ -623,37 +687,45 @@ A diferencia de la derecha convencional, que históricamente ha
 privilegiado los conflictos en torno a cuestiones económicas, la nueva
 ultraderecha desplaza el debate hacia dimensiones socioculturales,
 politizando temas como la identidad nacional, los valores tradicionales,
-la inmigración y la seguridad pública (Alenda y Escoffier, 2024). Según
-Rovira (2023), esta estrategia le permite movilizar no solo a sectores
-acomodados, sino también a grupos populares y de clase media que
-comparten posiciones conservadoras frente a estos temas.
+la inmigración y la seguridad pública
+(\citeproc{ref-alenda_mas_2024}{Alenda \& Escoffier, 2024}). Según
+Rovira Kaltwasser
+(\citeproc{ref-rovirakaltwasser_ultraderecha_2023}{2023}), esta
+estrategia le permite movilizar no solo a sectores acomodados, sino
+también a grupos populares y de clase media que comparten posiciones
+conservadoras frente a estos temas.
 
 En América Latina, estos movimientos se caracterizan por el
 conservadurismo moral, el énfasis en políticas de mano dura frente a la
 delincuencia, la defensa del libre mercado y un discurso fuertemente
-antagonista hacia la izquierda (ultra-lab, s.f.). En este contexto,
-Zanotti y Roberts (2021) sostienen que, de 18 países sudamericanos, solo
-Kast en Chile y Bolsonaro en Brasil encarnan plenamente la ideología de
-la derecha radical populista, e identifican tres factores que explican
-su éxito: un discurso que politiza seguridad y valores tradicionales; un
-nativismo invertido respecto del caso europeo, donde la discriminación
-se dirige primero contra pueblos originarios y no contra inmigrantes; y
-la construcción de apoyo sobre una identidad negativa frente a la
-izquierda.
+antagonista hacia la izquierda
+(\citeproc{ref-_laboratorio_}{\emph{Laboratorio Para El {Estudio} de La
+{Ultraderecha} En {América Latina}}, s.~f.}). En este contexto, Zanotti
+\& Roberts (\citeproc{ref-zanotti_aun_2021}{2021}) sostienen que, de 18
+países sudamericanos, solo Kast en Chile y Bolsonaro en Brasil encarnan
+plenamente la ideología de la derecha radical populista, e identifican
+tres factores que explican su éxito: un discurso que politiza seguridad
+y valores tradicionales; un nativismo invertido respecto del caso
+europeo, donde la discriminación se dirige primero contra pueblos
+originarios y no contra inmigrantes; y la construcción de apoyo sobre
+una identidad negativa frente a la izquierda.
 
 En el caso chileno específico, la emergencia del Partido Republicano ha
 sido analizada como un proceso de reconfiguración interna del campo de
-la derecha. Campos Campos (2021) reconstruye la genealogía del Partido
+la derecha. \emph{El {Partido Republicano}}
+(\citeproc{ref-_partido_}{s.~f.}) reconstruye la genealogía del Partido
 Republicano (PR), la cual nace de la candidatura presidencial
 independiente de Kast en 2017, su posterior organización en el
 movimiento ``Acción Republicana'' en 2018 y su formalización como
 partido en el 2019.
 
 Respecto al comportamiento electoral, para la candidatura de 2021,
-Argote y Visconti (2021) describieron al votante promedio de Kast como
-hombre, de derecha y mayor de cuarenta años, con altas posiciones
-favorables al uso de la fuerza en materia de seguridad pública y
-actitudes relativamente tolerantes hacia el legado del régimen militar.
+{«{Entendiendo al votante de Kast}»}
+(\citeproc{ref-_entendiendo_2021}{2021}) describieron al votante
+promedio de Kast como hombre, de derecha y mayor de cuarenta años, con
+altas posiciones favorables al uso de la fuerza en materia de seguridad
+pública y actitudes relativamente tolerantes hacia el legado del régimen
+militar.
 
 Más allá de las características sociodemográficas, diversos estudios han
 destacado el rol de las actitudes políticas en el apoyo a candidaturas
@@ -663,7 +735,10 @@ permanente, sino que puede activarse en contextos de incertidumbre,
 inseguridad o percepción de amenaza. En estas circunstancias, los
 individuos pueden valorar líderes fuertes como una respuesta
 instrumental frente a problemas considerados urgentes, más que por una
-adhesión normativa al autoritarismo (Villaroel-Riquelme, 2025).
+adhesión normativa al autoritarismo
+(\citeproc{ref-_solo_}{\emph{\textquestiondown{{S\'olo}}
+Instrumentalmente? {Reflexiones} Sobre La Preferencia Por Líderes
+Autoritarios e Ideología Política -- {MEPOP}}, s.~f.}).
 
 En segundo lugar, la meritocracia se ha consolidado como uno de los
 principales relatos legitimadores del orden social en Chile, promoviendo
@@ -671,24 +746,27 @@ la idea de que el esfuerzo individual y el talento constituyen los
 principales determinantes del éxito económico y social. Esta visión
 favorece una comprensión de la desigualdad centrada en la
 responsabilidad individual y resulta consistente con proyectos políticos
-que defienden el libre mercado y un rol subsidiario del Estado (Atria,
-2021).
+que defienden el libre mercado y un rol subsidiario del Estado
+(\citeproc{ref-atria_dilemas_2021}{Atria, 2021}).
 
 En tercer lugar, el surgimiento de la ultraderecha ha sido interpretado
 como una ``reacción restauradora'' frente a transformaciones sociales y
 políticas derivadas del estallido social de 2019, en la cual sectores
 del electorado articulan demandas de orden, estabilidad y reticencia al
 cambio, así, el debate político chileno ha sido interpretado en torno a
-un eje ``democracia-orden'' (Titelman, 2021).
+un eje ``democracia-orden'' (\emph{La \textless\textless derecha Sin
+Complejos\textgreater\textgreater{} Que Busca Frenar El Cambio En
+{Chile} \textbar{} {Nueva Sociedad}} (\citeproc{ref-_derecha_}{s.~f.})).
 
 Finalmente, la literatura ha señalado que el creciente malestar con el
 funcionamiento del sistema político y la desconfianza hacia las
 instituciones se enmarca en un contexto más amplio de polarización
 ideológica en Chile, caracterizado por el debilitamiento de consensos
 históricos y el aumento de la distancia entre posiciones políticas
-(Lindh et al., 2019). En este escenario, la polarización política
-constituye una dimensión relevante para comprender la estructuración de
-las preferencias electorales contemporáneas.
+(\citeproc{ref-lindh_fragility_2019}{Lindh et~al., 2019}). En este
+escenario, la polarización política constituye una dimensión relevante
+para comprender la estructuración de las preferencias electorales
+contemporáneas.
 
 En conjunto, estos antecedentes sugieren que el apoyo a candidaturas de
 ultraderecha puede comprenderse como el resultado de la interacción
@@ -1175,15 +1253,15 @@ Por las razones señaladas anteriormente, se generaron 3 modelos:
 
 A partir de la Tabla~\ref{tbl-figura-2}, en el primer modelo las
 variables operan en las direcciones teóricamente esperadas y resultan
-ambas estadísticamente significativas con un 99.9\% de confianza (\$ p
-\textless{} .001\$). Con respecto a la creencia en meritocracia, se
-estima que por cada unidad que aumenta esta preferencia, los odds de
-votar por Kast crecen en un 22\%. Es decir, a mayores niveles de
-creencia por el esfuerzo, aumenta la probabilidad de voto por Kast. En
-relación a la reticencia al cambio en el Estado, se manifiesta que las
-personas que se mantienen reticentes al cambio político-institucional
-tienen un 51\% menos de chances de votar por el candidato en comparación
-con quienes prefieren reformas en el Estado.
+ambas estadísticamente significativas con un 99.9\% de confianza (
+\(p < .001\) ). Con respecto a la creencia en meritocracia, se estima
+que por cada unidad que aumenta esta preferencia, los odds de votar por
+Kast crecen en un 22\%. Es decir, a mayores niveles de creencia por el
+esfuerzo, aumenta la probabilidad de voto por Kast. En relación a la
+reticencia al cambio en el Estado, se manifiesta que las personas que se
+mantienen reticentes al cambio político-institucional tienen un 51\%
+menos de chances de votar por el candidato en comparación con quienes
+prefieren reformas en el Estado.
 
 Respecto al segundo modelo (M2), al integrar la variable de corrupción
 en los servicios públicos, se indica que no es estadísticamente
@@ -1335,22 +1413,22 @@ preferencia por el autoritarismo y polarización política.
 En primer lugar, los hallazgos muestran que la preferencia por el
 autoritarismo y la polarización política constituyen los factores con
 mayor capacidad predictiva dentro del modelo final, en línea con lo
-señalado por Zanotti y Roberts (2021) respecto de los rasgos distintivos
-de la derecha radical populista en América Latina. El incremento
-observado en el ajuste del modelo al incorporar estas variables (M3)
-sugiere que el apoyo electoral a Kast se encuentra asociado
-principalmente a disposiciones ideológicas y actitudinales vinculadas al
-autoritarismo y la polarización política.
+señalado por Zanotti \& Roberts (\citeproc{ref-zanotti_aun_2021}{2021})
+respecto de los rasgos distintivos de la derecha radical populista en
+América Latina. El incremento observado en el ajuste del modelo al
+incorporar estas variables (M3) sugiere que el apoyo electoral a Kast se
+encuentra asociado principalmente a disposiciones ideológicas y
+actitudinales vinculadas al autoritarismo y la polarización política.
 
 En segundo lugar, la asociación positiva entre la creencia en la
 meritocracia y la probabilidad de votar por Kast resulta consistente con
-la interpretación de Atria (2021), quien plantea que la meritocracia
-opera como un relato legitimador del orden social basado en la
-responsabilidad individual y el mérito. En este sentido, los resultados
-sugieren que quienes adhieren con mayor fuerza a estas creencias
-presentan también una mayor probabilidad de apoyar proyectos políticos
-que enfatizan la responsabilidad individual por sobre la intervención
-estatal.
+la interpretación de Atria (\citeproc{ref-atria_dilemas_2021}{2021}),
+quien plantea que la meritocracia opera como un relato legitimador del
+orden social basado en la responsabilidad individual y el mérito. En
+este sentido, los resultados sugieren que quienes adhieren con mayor
+fuerza a estas creencias presentan también una mayor probabilidad de
+apoyar proyectos políticos que enfatizan la responsabilidad individual
+por sobre la intervención estatal.
 
 En tercer lugar, la ausencia de significancia estadística de la
 desconfianza en los servicios públicos es relevante, ya que contradice
@@ -1364,14 +1442,17 @@ descontento con el aparato estatal.
 Por otra parte, el signo inverso observado para la reticencia al cambio
 contradice directamente la hipótesis H5 y matiza la interpretación del
 voto por Kast como una simple ``reacción restauradora'', en el sentido
-planteado por Titelman (2021). Contrario a lo esperado, quienes
-manifestaron una mayor preferencia por mantener el Estado sin
-modificaciones presentaron una menor probabilidad de votar por Kast.
-Este hallazgo sugiere que el electorado del candidato no necesariamente
-se identifica con una defensa ilimitada del status quo institucional,
-sino que podría expresar una disposición favorable a transformaciones
-específicas del Estado orientadas hacia un proyecto político distinto,
-especialmente en materias asociadas al orden y la seguridad pública.
+planteado por \emph{La \textless\textless derecha Sin
+Complejos\textgreater\textgreater{} Que Busca Frenar El Cambio En
+{Chile} \textbar{} {Nueva Sociedad}} (\citeproc{ref-_derecha_}{s.~f.}).
+Contrario a lo esperado, quienes manifestaron una mayor preferencia por
+mantener el Estado sin modificaciones presentaron una menor probabilidad
+de votar por Kast. Este hallazgo sugiere que el electorado del candidato
+no necesariamente se identifica con una defensa ilimitada del status quo
+institucional, sino que podría expresar una disposición favorable a
+transformaciones específicas del Estado orientadas hacia un proyecto
+político distinto, especialmente en materias asociadas al orden y la
+seguridad pública.
 
 Finalmente, los resultados indican que el comportamiento electoral en
 torno a Kast no puede comprenderse a partir de una única dimensión
@@ -1379,7 +1460,7 @@ explicativa, sino que responde a la interacción de distintas actitudes
 políticas e ideológicas, particularmente aquellas relacionadas con el
 autoritarismo, la meritocracia y la polarización política, en un
 contexto de fragilidad de los consensos políticos como el descrito por
-Lindh et al.(2019).
+Lindh et~al. (\citeproc{ref-lindh_fragility_2019}{2019}).
 
 Al mismo tiempo, aunque la incorporación progresiva de estas variables
 mejora el ajuste del modelo, el pseudo R² final de 0,134 evidencia que
@@ -1430,6 +1511,60 @@ de prácticas de ciencia abierta.
 bibliográficas}\label{referencias-bibliogruxe1ficas}
 
 \protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-alenda_mas_2024}
+Alenda, S., \& Escoffier, S. (2024). {Más Allá del Fascismo: Una agenda
+de investigación sobre la nueva ultraderecha en América Latina}.
+\emph{Revista de Historia Social y de las Mentalidades}, \emph{28}(1),
+255-290. \url{https://doi.org/10.35588/03e7wr10}
+
+\bibitem[\citeproctext]{ref-atria_dilemas_2021}
+Atria, J. (2021). Los Dilemas de La Meritocracia. {Entrevista} Con
+{François Dubet}. \emph{Revista Mexicana de Sociología}, \emph{83}(2).
+\url{https://doi.org/10.22201/iis.01882503p.2021.2.60092}
+
+\bibitem[\citeproctext]{ref-_partido_}
+\emph{El {Partido Republicano}:: El Proyecto Populista de La Derecha
+Radical Chilena \textbar{} {Revista Uruguaya} de {Ciencia Política}}.
+(s.~f.).
+https://rucp.cienciassociales.edu.uy/index.php/rucp/article/view/479.
+
+\bibitem[\citeproctext]{ref-_entendiendo_2021}
+{Entendiendo al votante de Kast}. (2021). En \emph{Tercera Dosis}.
+
+\bibitem[\citeproctext]{ref-_solo_}
+\emph{\textquestiondown{{S\'olo}} Instrumentalmente? {Reflexiones} Sobre
+La Preferencia Por Líderes Autoritarios e Ideología Política --
+{MEPOP}}. (s.~f.).
+https://mepop.cl/solo-instrumentalmente-reflexiones-sobre-la-preferencia-por-lideres-autoritarios-e-ideologia-politica/.
+
+\bibitem[\citeproctext]{ref-_derecha_}
+\emph{La \textless\textless derecha Sin
+Complejos\textgreater\textgreater{} Que Busca Frenar El Cambio En
+{Chile} \textbar{} {Nueva Sociedad}}. (s.~f.).
+https://nuso.org/articulo/Chile-Kast-Boric/.
+
+\bibitem[\citeproctext]{ref-_laboratorio_}
+\emph{Laboratorio Para El {Estudio} de La {Ultraderecha} En {América
+Latina}}. (s.~f.). https://ultra-lab.cl/ideas-de-ultraderecha.php.
+
+\bibitem[\citeproctext]{ref-lindh_fragility_2019}
+Lindh, J., Fábrega, J., González, J., Lindh, J., Fábrega, J., \&
+González, J. (2019). The {Fragility} of {Consensus}: {Ideological
+Polarization} in {Post-Pinochet Chile}. \emph{Revista de ciencia
+política (Santiago)}, \emph{39}(1), 99-127.
+\url{https://doi.org/10.4067/S0718-090X2019000100099}
+
+\bibitem[\citeproctext]{ref-rovirakaltwasser_ultraderecha_2023}
+Rovira Kaltwasser, C. (2023). \emph{{La ultraderecha en América Latina:
+definiciones y explicaciones / Cristóbal Rovira Kaltwasser}}.
+
+\bibitem[\citeproctext]{ref-zanotti_aun_2021}
+Zanotti, L., \& Roberts, K. M. (2021). {(Aún) la excepción y no la
+regla:: La derecha populista radical en América Latina}. \emph{Revista
+Uruguaya de Ciencia Política}, \emph{30}(1), 23-48.
+
+\end{CSLReferences}
 
 
 \backmatter
