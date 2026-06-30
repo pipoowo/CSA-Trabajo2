@@ -29,7 +29,7 @@ Los resultados muestran que una mayor preferencia por el autoritarismo, una mayo
 <br>
 
 ::: {.keywords-box}
-<span style="font-size: 1.1em;"><strong>Palabras clave:</strong> Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo,
+<span style="font-size: 0.9em;"><strong>Palabras clave:</strong> Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo,
 Confianza institucional, Intolerancia política, Meritocracia, Reticencia al cambio.</span>
 :::
 
