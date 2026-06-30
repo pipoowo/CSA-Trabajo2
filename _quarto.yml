@@ -51,10 +51,7 @@ book:
     - references.qmd
     # Para agregar un nuevo capitulo duplica un archivo .qmd y agregalo aqui:
     # ej: - 07-analisis-cualitativo.qmd
-  appendices:
-    - apendices/A-encuestas.qmd
-    - apendices/B-tablas.qmd
-    # Guarda anexos extensos en apendices/ y listalos aqui.
+
 
 csl: refs/apa.csl                # Estilo de citas (cambia a otro .csl si lo prefieres)
 bibliography: refs/referencias.bib
