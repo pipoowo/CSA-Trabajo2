@@ -10,28 +10,28 @@ format:
     title-block-style: none
 ---
 
-::: {.content-visible when-format="pdf"}
-\small\textbf{Palabras clave:} Ciencia Social Abierta
-\normalsize
-:::
-
 ::: {.content-visible when-format="html"}
 <style>
 nav#TOC { display: none !important; }
 div[data-when-format="pdf"] { display: none !important; }
 </style>
+:::
+
 # Abstract {.unnumbered}
 
-<font size="3">El resurgimiento de la ultraderecha en Chile, consolidado por la figura de José Antonio Kast plantea interrogantes sobre los factores asociados a su apoyo electoral en escenarios políticos polarizados. En este contexto, la presente investigación tiene como objetivo identificar los principales factores asociados a la probabilidad de votar por José Antonio Kast en las elecciones presidenciales de Chile de 2025, considerando variables actitudinales como la preferencia por el autoritarismo, la creencia en la meritocracia, la desconfianza en los servicios públicos, la polarización política y la reticencia al cambio. Para esto, se realizó un estudio cuantitativo de corte transversal utilizando la Encuesta CEP N.° 95 (septiembre-octubre de 2025), en la cual a partir de una muestra probabilística de personas de 18 años y más, se estimaron tres modelos jerárquicos de regresión logística binaria para evaluar el efecto de las variables explicativas sobre la probabilidad de votar por Kast. 
+El resurgimiento de la ultraderecha en Chile, consolidado por la figura de José Antonio Kast plantea interrogantes sobre los factores asociados a su apoyo electoral en escenarios políticos polarizados. En este contexto, la presente investigación tiene como objetivo identificar los principales factores asociados a la probabilidad de votar por José Antonio Kast en las elecciones presidenciales de Chile de 2025, considerando variables actitudinales como la preferencia por el autoritarismo, la creencia en la meritocracia, la desconfianza en los servicios públicos, la polarización política y la reticencia al cambio. Para esto, se realizó un estudio cuantitativo de corte transversal utilizando la Encuesta CEP N.° 95 (septiembre-octubre de 2025), en la cual a partir de una muestra probabilística de personas de 18 años y más, se estimaron tres modelos jerárquicos de regresión logística binaria para evaluar el efecto de las variables explicativas sobre la probabilidad de votar por Kast. 
 
-Los resultados muestran que una mayor preferencia por el autoritarismo, una mayor creencia en la meritocracia y mayores niveles de polarización política incrementan significativamente las chances de votar por José Antonio Kast. En contraste, la percepción de corrupción en los servicios públicos no presentó un efecto estadísticamente significativo. Por último, la reticencia al cambio mostró una relación opuesta a la planteada inicialmente, evidenciando que quienes prefieren mantener el Estado sin cambios presentan menores odds de apoyar la candidatura de Kast. </font>
+Los resultados muestran que una mayor preferencia por el autoritarismo, una mayor creencia en la meritocracia y mayores niveles de polarización política incrementan significativamente las chances de votar por José Antonio Kast. En contraste, la percepción de corrupción en los servicios públicos no presentó un efecto estadísticamente significativo. Por último, la reticencia al cambio mostró una relación opuesta a la planteada inicialmente, evidenciando que quienes prefieren mantener el Estado sin cambios presentan menores odds de apoyar la candidatura de Kast.
 
+::: {.content-visible when-format="pdf"}
+\vspace{1em}
+\small\textbf{Palabras clave:} Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo, Confianza institucional, Intolerancia política, Meritocracia, Reticencia al cambio.
+\normalsize
+:::
+
+::: {.content-visible when-format="html"}
 <br>
-
 ::: {.keywords-box}
-<span style="font-size: 0.9em;"><strong>Palabras clave:</strong> Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo,
-Confianza institucional, Intolerancia política, Meritocracia, Reticencia al cambio.</span>
+<span style="font-size: 0.9em;"><strong>Palabras clave:</strong> Ciencia Social Abierta, Ultraderecha, Comportamiento Electoral, Autoritarismo, Confianza institucional, Intolerancia política, Meritocracia, Reticencia al cambio.</span>
 :::
-
 :::
----
